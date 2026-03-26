@@ -1,1 +1,48 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #0f172a;
+    color: white;
+    text-align: center;
+}
 
+.navbar {
+    padding: 15px;
+    background: #020617;
+}
+
+.logo {
+    font-size: 20px;
+    color: #22c55e;
+}
+
+.hero {
+    padding: 80px 20px;
+}
+
+.upload-btn {
+    background: #22c55e;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.ad {
+    margin: 20px;
+    padding: 20px;
+    background: #1e293b;
+}
