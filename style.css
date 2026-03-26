@@ -3,46 +3,79 @@ body {
     font-family: Arial;
     background: #0f172a;
     color: white;
-    text-align: center;
 }
 
 .navbar {
-    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
     background: #020617;
 }
 
+.navbar a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
 .logo {
-    font-size: 20px;
     color: #22c55e;
+    font-weight: bold;
 }
 
 .hero {
+    text-align: center;
     padding: 80px 20px;
 }
 
-.upload-btn {
+.hero button {
     background: #22c55e;
-    padding: 15px 30px;
+    padding: 15px 25px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.tools {
+    text-align: center;
+    padding: 40px;
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    padding: 20px;
 }
 
 .card {
     background: #1e293b;
     padding: 30px;
     border-radius: 12px;
+    text-decoration: none;
+    color: white;
 }
 
 .ad {
     margin: 20px;
     padding: 20px;
+    text-align: center;
     background: #1e293b;
+}
+
+.seo, .trust, .faq {
+    padding: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+}
+
+footer a {
+    color: #94a3b8;
+    margin: 10px;
+    display: inline-block;
 }
