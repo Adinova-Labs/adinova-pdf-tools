@@ -12,12 +12,26 @@
 body {
     background: #0f172a;
     color: white;
-    text-align: center;
     font-family: Arial;
+    margin: 0;
 }
 
 .container {
-    padding: 50px;
+    max-width: 700px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.upload-box {
+    border: 2px dashed #22c55e;
+    padding: 40px;
+    border-radius: 12px;
+    margin-top: 20px;
 }
 
 button {
@@ -27,39 +41,110 @@ button {
     border-radius: 10px;
     margin-top: 20px;
     cursor: pointer;
+    font-size: 16px;
 }
 
-input {
+.file-list {
     margin-top: 20px;
+    text-align: left;
+}
+
+.file-item {
+    background: #1e293b;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+}
+
+.progress {
+    margin-top: 20px;
+    display: none;
+}
+
+.ad {
+    margin-top: 30px;
+    padding: 15px;
+    background: #1e293b;
 }
 </style>
 </head>
+<title>Merge PDF Online Free - Combine PDF Files | Adinova PDF Tools</title>
+
+<meta name="description" content="Merge PDF files online for free. Combine multiple PDF documents into one instantly with Adinova PDF Tools. Fast, secure and no signup required.">
+
+<meta name="keywords" content="merge pdf, combine pdf, pdf merger online, free pdf merge tool">
+
+<meta name="robots" content="index, follow">
 
 <body>
 
 <div class="container">
 
-<h1>Merge PDF</h1>
+<h1>Merge PDF Files</h1>
+<p>Combine multiple PDFs into one file quickly and securely.</p>
 
+<div class="upload-box">
 <input type="file" id="pdfFiles" multiple accept="application/pdf">
+</div>
 
-<br>
+<div class="file-list" id="fileList"></div>
 
 <button onclick="mergePDF()">Merge & Download</button>
+
+<div class="progress" id="progress">Processing...</div>
+
+<div style="max-width:800px;margin:auto;text-align:left;padding:30px;">
+
+<h2>How to Merge PDF Files Online?</h2>
+<p>Merging PDF files is simple with Adinova PDF Tools. Upload your PDF files, click merge, and download your combined document instantly. Our tool works directly in your browser and ensures complete privacy.</p>
+
+<h2>Why Use Our PDF Merger?</h2>
+<ul>
+<li>100% Free PDF merging tool</li>
+<li>No signup required</li>
+<li>Fast and secure processing</li>
+<li>Works on all devices</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is this PDF merge tool free?</h3>
+<p>Yes, our PDF merger is completely free to use.</p>
+
+<h3>Are my files safe?</h3>
+<p>Yes, your files are processed securely and not stored on our servers.</p>
+
+</div>
+
+<div class="ad">Ad Space</div>
 
 </div>
 
 <script>
 
+const input = document.getElementById('pdfFiles');
+const fileList = document.getElementById('fileList');
+
+input.addEventListener('change', () => {
+    fileList.innerHTML = "";
+    for (let file of input.files) {
+        const div = document.createElement('div');
+        div.className = "file-item";
+        div.textContent = file.name;
+        fileList.appendChild(div);
+    }
+});
+
 async function mergePDF() {
     const { PDFDocument } = PDFLib;
-
-    const files = document.getElementById('pdfFiles').files;
+    const files = input.files;
 
     if (files.length < 2) {
         alert("Upload at least 2 PDFs");
         return;
     }
+
+    document.getElementById('progress').style.display = "block";
 
     const mergedPdf = await PDFDocument.create();
 
@@ -80,6 +165,8 @@ async function mergePDF() {
     a.href = url;
     a.download = "merged.pdf";
     a.click();
+
+    document.getElementById('progress').style.display = "none";
 }
 
 </script>
