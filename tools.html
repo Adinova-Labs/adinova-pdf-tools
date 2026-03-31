@@ -49,8 +49,11 @@ grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
 gap:20px;
 padding:20px;
 }
-
+.tools a {
+text-decoration:none;
+}
 .tool-card {
+display:block;
 background:#1e293b;
 padding:30px;
 border-radius:12px;
@@ -58,6 +61,8 @@ text-align:center;
 cursor:pointer;
 transition:0.3s;
 font-weight:500;
+color:#fff;
+text-decoration:none;
 }
 
 .tool-card:hover {
@@ -122,17 +127,12 @@ footer a:hover {color:#22c55e;}
 
 <div class="tools">
 
-<a href="/tools/merge.html"><div class="tool-card">Merge PDF</div></a>
-
-<a href="/tools/compress.html"><div class="tool-card">Compress PDF</div></a>
-
-<a href="/tools/split.html"><div class="tool-card">Split PDF</div></a>
-
-<a href="/tools/jpg-to-pdf.html"><div class="tool-card">JPG to PDF</div></a>
-
-<a href="/tools/pdf-to-jpg.html"><div class="tool-card">PDF to JPG</div></a>
-
-<a href="/tools/pdf-size-reducer.html"><div class="tool-card">PDF Size Reducer</div></a>
+<a href="/tools/merge.html" class="tool-card">Merge PDF</a>
+<a href="/tools/compress.html" class="tool-card">Compress PDF</a>
+<a href="/tools/split.html" class="tool-card">Split PDF</a>
+<a href="/tools/jpg-to-pdf.html" class="tool-card">JPG to PDF</a>
+<a href="/tools/pdf-to-jpg.html" class="tool-card">PDF to JPG</a>
+<a href="/tools/pdf-size-reducer.html" class="tool-card">PDF Size Reducer</a>
 
 </div>
 
