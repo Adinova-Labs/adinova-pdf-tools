@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reduce PDF Size Online Free | Compress PDF Easily</title>
+
+<meta name="description" content="Reduce PDF file size online for free. Compress your PDF instantly with Adinova PDF Tools. Fast, secure and no signup required.">
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+
+body {margin:0;font-family:Arial;background:#020617;color:#fff;}
+
+.header {
+    display:flex;
+    justify-content:space-between;
+    padding:15px 30px;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.logo {color:#22c55e;font-weight:bold;}
+
+.header a {margin-left:20px;color:#cbd5f5;text-decoration:none;}
+.header a:hover {color:#22c55e;}
+
+.hero {text-align:center;padding:60px 20px;}
+.hero h1 {font-size:34px;}
+.hero p {color:#94a3b8;}
+
+.upload-box {
+    border:2px dashed #22c55e;
+    padding:40px;
+    border-radius:12px;
+    max-width:700px;
+    margin:20px auto;
+    text-align:center;
+}
+
+button {
+    background:#22c55e;
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.trust-line {
+    text-align:center;
+    margin-top:10px;
+    font-size:14px;
+    color:#94a3b8;
+}
+
+.content {
+    max-width:800px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+h2 {margin-top:30px;}
+p {color:#94a3b8;line-height:1.6;}
+
+.ad {
+    background:#1e293b;
+    padding:20px;
+    text-align:center;
+    margin:40px auto;
+    max-width:800px;
+}
+
+footer {
+    text-align:center;
+    padding:30px;
+    border-top:1px solid rgba(255,255,255,0.05);
+}
+
+footer a {
+    color:#94a3b8;
+    margin:0 10px;
+    text-decoration:none;
+}
+
+footer a:hover {color:#22c55e;}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="header">
+<div class="logo">Adinova PDF</div>
+<nav>
+<a href="/">Home</a>
+<a href="../about.html">About</a>
+<a href="../contact.html">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Reduce PDF File Size Online</h1>
+<p>Compress your PDF instantly without losing quality.</p>
+</section>
+
+<div class="upload-box">
+<p>📄 Upload PDF File</p>
+<input type="file" id="pdfInput" accept="application/pdf">
+<br>
+<button onclick="reducePDF()">Reduce & Download</button>
+</div>
+
+<div class="trust-line">
+No Signup • 100% Secure • Instant Processing
+</div>
+
+<div class="ad">Advertisement</div>
+
+<section class="content">
+
+<h2>How to Reduce PDF Size?</h2>
+<p>Upload your PDF file and compress it instantly. Our tool optimizes file size while maintaining quality.</p>
+
+<h2>Why Use Our PDF Size Reducer?</h2>
+<ul>
+<li>✔ Free and easy to use</li>
+<li>✔ No signup required</li>
+<li>✔ Fast compression</li>
+<li>✔ Works on all devices</li>
+</ul>
+
+<h2>FAQ</h2>
+<p><strong>Is it free?</strong><br>Yes, completely free.</p>
+
+</section>
+
+<footer>
+<p>© 2026 Adinova Labs</p>
+
+<a href="../privacy.html">Privacy Policy</a>
+<a href="../terms.html">Terms</a>
+<a href="../contact.html">Contact</a>
+</footer>
+
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+
+<script>
+
+async function reducePDF() {
+
+    const file = document.getElementById("pdfInput").files[0];
+
+    if (!file) {
+        alert("Upload PDF first");
+        return;
+    }
+
+    const { PDFDocument } = PDFLib;
+
+    const bytes = await file.arrayBuffer();
+    const pdfDoc = await PDFDocument.load(bytes);
+
+    // Re-save (basic compression)
+    const compressedPdf = await pdfDoc.save({ useObjectStreams: true });
+
+    const blob = new Blob([compressedPdf], { type: "application/pdf" });
+
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "reduced.pdf";
+    link.click();
+}
+
+</script>
+
+</body>
+</html>
