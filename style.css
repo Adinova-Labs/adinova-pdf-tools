@@ -142,3 +142,21 @@ button {
     background: linear-gradient(135deg, #22c55e, #16a34a);
     box-shadow: 0 4px 15px rgba(34,197,94,0.3);
 }
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #020617;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.header a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #cbd5f5;
+}
+
+.header a:hover {
+    color: #22c55e;
+}
