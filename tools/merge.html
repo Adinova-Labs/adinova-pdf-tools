@@ -1,175 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Merge PDF - Adinova PDF Tools</title>
+<title>Merge PDF Online Free | Combine PDF Files - Adinova PDF</title>
 
-<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+<meta name="description" content="Merge PDF files online for free. Combine multiple PDFs into one document quickly and securely with Adinova PDF Tools. No signup required.">
+
+<link rel="stylesheet" href="../style.css">
 
 <style>
+
 body {
-    background: #0f172a;
-    color: white;
-    font-family: Arial;
     margin: 0;
+    font-family: Arial;
+    background: #020617;
+    color: #fff;
 }
 
-.container {
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.logo { color: #22c55e; font-weight: bold; }
+
+.header a {
+    margin-left: 20px;
+    color: #cbd5f5;
+    text-decoration: none;
+}
+
+.header a:hover { color: #22c55e; }
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 { font-size: 32px; }
+
+.hero p {
+    color: #94a3b8;
+}
+
+/* TOOL BOX */
+.tool-box {
     max-width: 700px;
     margin: auto;
-    padding: 40px 20px;
+    background: #0f172a;
+    padding: 40px;
+    border-radius: 12px;
     text-align: center;
 }
 
-h1 {
-    margin-bottom: 10px;
-}
-
-.upload-box {
-    border: 2px dashed #22c55e;
-    padding: 40px;
-    border-radius: 12px;
-    margin-top: 20px;
+input {
+    margin: 20px 0;
 }
 
 button {
     background: #22c55e;
-    padding: 15px 25px;
     border: none;
-    border-radius: 10px;
-    margin-top: 20px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.file-list {
-    margin-top: 20px;
-    text-align: left;
-}
-
-.file-item {
-    background: #1e293b;
-    padding: 10px;
-    margin: 5px 0;
+    padding: 12px 25px;
     border-radius: 8px;
+    cursor: pointer;
 }
 
-.progress {
-    margin-top: 20px;
-    display: none;
+/* SEO */
+.content {
+    max-width: 800px;
+    margin: auto;
+    padding: 60px 20px;
 }
 
+h2 { margin-top: 30px; }
+
+p {
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* AD */
 .ad {
-    margin-top: 30px;
-    padding: 15px;
     background: #1e293b;
+    padding: 20px;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
 }
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+footer a {
+    color: #94a3b8;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer a:hover { color: #22c55e; }
+
 </style>
+
 </head>
-<title>Merge PDF Online Free - Combine PDF Files | Adinova PDF Tools</title>
-
-<meta name="description" content="Merge PDF files online for free. Combine multiple PDF documents into one instantly with Adinova PDF Tools. Fast, secure and no signup required.">
-
-<meta name="keywords" content="merge pdf, combine pdf, pdf merger online, free pdf merge tool">
-
-<meta name="robots" content="index, follow">
 
 <body>
 
-<div class="container">
+<!-- HEADER -->
+<header class="header">
+<div class="logo">Adinova PDF</div>
+<nav>
+<a href="/">Home</a>
+<a href="../about.html">About</a>
+<a href="../contact.html">Contact</a>
+</nav>
+</header>
 
-<h1>Merge PDF Files</h1>
-<p>Combine multiple PDFs into one file quickly and securely.</p>
+<!-- HERO -->
+<section class="hero">
+<h1>Merge PDF Files Online</h1>
+<p>Combine multiple PDF documents into one file instantly. Free, secure and easy to use.</p>
+</section>
 
-<div class="upload-box">
-<input type="file" id="pdfFiles" multiple accept="application/pdf">
+<!-- TOOL -->
+<div class="tool-box">
+<input type="file" multiple>
+<br>
+<button>Merge & Download</button>
 </div>
 
-<div class="file-list" id="fileList"></div>
+<!-- AD -->
+<div class="ad">Ad Space</div>
 
-<button onclick="mergePDF()">Merge & Download</button>
+<!-- SEO CONTENT -->
+<section class="content">
 
-<div class="progress" id="progress">Processing...</div>
-
-<div style="max-width:800px;margin:auto;text-align:left;padding:30px;">
-
-<h2>How to Merge PDF Files Online?</h2>
-<p>Merging PDF files is simple with Adinova PDF Tools. Upload your PDF files, click merge, and download your combined document instantly. Our tool works directly in your browser and ensures complete privacy.</p>
+<h2>How to Merge PDF Files?</h2>
+<p>Upload your PDF files, click the merge button, and download your combined document instantly. Our tool works directly in your browser.</p>
 
 <h2>Why Use Our PDF Merger?</h2>
 <ul>
-<li>100% Free PDF merging tool</li>
-<li>No signup required</li>
-<li>Fast and secure processing</li>
-<li>Works on all devices</li>
+<li>✔ 100% Free</li>
+<li>✔ No signup required</li>
+<li>✔ Fast processing</li>
+<li>✔ Secure and private</li>
 </ul>
 
 <h2>Frequently Asked Questions</h2>
 
-<h3>Is this PDF merge tool free?</h3>
-<p>Yes, our PDF merger is completely free to use.</p>
+<p><strong>Is this tool free?</strong><br>Yes, completely free.</p>
 
-<h3>Are my files safe?</h3>
-<p>Yes, your files are processed securely and not stored on our servers.</p>
+<p><strong>Are my files safe?</strong><br>Yes, files are not stored.</p>
 
-</div>
+</section>
 
-<div class="ad">Ad Space</div>
+<!-- FOOTER -->
+<footer>
+<p>© 2026 Adinova Labs</p>
 
-</div>
-
-<script>
-
-const input = document.getElementById('pdfFiles');
-const fileList = document.getElementById('fileList');
-
-input.addEventListener('change', () => {
-    fileList.innerHTML = "";
-    for (let file of input.files) {
-        const div = document.createElement('div');
-        div.className = "file-item";
-        div.textContent = file.name;
-        fileList.appendChild(div);
-    }
-});
-
-async function mergePDF() {
-    const { PDFDocument } = PDFLib;
-    const files = input.files;
-
-    if (files.length < 2) {
-        alert("Upload at least 2 PDFs");
-        return;
-    }
-
-    document.getElementById('progress').style.display = "block";
-
-    const mergedPdf = await PDFDocument.create();
-
-    for (let file of files) {
-        const bytes = await file.arrayBuffer();
-        const pdf = await PDFDocument.load(bytes);
-        const pages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
-
-        pages.forEach(page => mergedPdf.addPage(page));
-    }
-
-    const mergedBytes = await mergedPdf.save();
-
-    const blob = new Blob([mergedBytes], { type: 'application/pdf' });
-    const url = URL.createObjectURL(blob);
-
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = "merged.pdf";
-    a.click();
-
-    document.getElementById('progress').style.display = "none";
-}
-
-</script>
+<a href="../privacy.html">Privacy Policy</a>
+<a href="../terms.html">Terms</a>
+<a href="../contact.html">Contact</a>
+</footer>
 
 </body>
 </html>
