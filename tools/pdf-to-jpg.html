@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PDF to JPG Converter Online Free | Adinova PDF</title>
+
+<meta name="description" content="Convert PDF to JPG online free. Extract images from PDF instantly with secure browser processing. No signup required.">
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+
+body {margin:0;font-family:Arial;background:#020617;color:#fff;}
+
+.header {
+display:flex;
+justify-content:space-between;
+padding:15px 30px;
+border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.logo {color:#22c55e;font-weight:bold;}
+
+.header a {
+margin-left:20px;
+color:#cbd5f5;
+text-decoration:none;
+}
+.header a:hover {color:#22c55e;}
+
+.hero {
+text-align:center;
+padding:60px 20px;
+}
+
+.hero h1 {font-size:34px;}
+.hero p {color:#94a3b8;}
+
+.upload-box {
+border:2px dashed #22c55e;
+padding:40px;
+border-radius:12px;
+max-width:700px;
+margin:20px auto;
+text-align:center;
+}
+
+button {
+background:#22c55e;
+padding:12px 25px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+margin-top:15px;
+}
+
+button:hover {
+background:#16a34a;
+}
+
+.status {
+margin-top:10px;
+color:#94a3b8;
+font-size:14px;
+}
+
+.trust-line {
+text-align:center;
+margin-top:10px;
+font-size:14px;
+color:#94a3b8;
+}
+
+.content {
+max-width:800px;
+margin:auto;
+padding:60px 20px;
+}
+
+h2 {margin-top:30px;}
+p {color:#94a3b8;line-height:1.6;}
+
+.ad {
+background:#1e293b;
+padding:20px;
+text-align:center;
+margin:40px auto;
+max-width:800px;
+}
+
+footer {
+text-align:center;
+padding:30px;
+border-top:1px solid rgba(255,255,255,0.05);
+}
+
+footer a {
+color:#94a3b8;
+margin:0 10px;
+text-decoration:none;
+}
+
+footer a:hover {color:#22c55e;}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="header">
+<div class="logo">Adinova PDF</div>
+<nav>
+<a href="/">Home</a>
+<a href="../about.html">About</a>
+<a href="../contact.html">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Convert PDF to JPG Online</h1>
+<p>Extract high-quality images from your PDF instantly.</p>
+</section>
+
+<div class="upload-box">
+<p>📄 Upload PDF File</p>
+<input type="file" id="pdfInput" accept="application/pdf">
+<br>
+<button onclick="convertPDF()">Convert & Download</button>
+
+<div class="status" id="status"></div>
+</div>
+
+<div class="trust-line">
+No Signup • 100% Secure • Instant Processing
+</div>
+
+<div class="ad">Advertisement</div>
+
+<section class="content">
+
+<h2>How to Convert PDF to JPG?</h2>
+<p>Upload your PDF file, click convert, and download images instantly. Our tool processes files directly in your browser.</p>
+
+<h2>Why Choose Adinova PDF?</h2>
+<ul>
+<li>✔ Fast conversion</li>
+<li>✔ No signup required</li>
+<li>✔ Secure processing</li>
+<li>✔ Works on all devices</li>
+</ul>
+
+<h2>FAQ</h2>
+<p><strong>Is this tool free?</strong><br>Yes, it is completely free.</p>
+
+</section>
+
+<footer>
+<p>© 2026 Adinova Labs</p>
+
+<a href="../privacy.html">Privacy Policy</a>
+<a href="../terms.html">Terms</a>
+<a href="../contact.html">Contact</a>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<script>
+
+async function convertPDF() {
+
+const file = document.getElementById("pdfInput").files[0];
+const status = document.getElementById("status");
+
+if (!file) {
+alert("Upload PDF first");
+return;
+}
+
+status.innerText = "Processing...";
+
+const fileReader = new FileReader();
+
+fileReader.onload = async function() {
+
+const typedarray = new Uint8Array(this.result);
+const pdf = await pdfjsLib.getDocument(typedarray).promise;
+
+for (let i = 1; i <= pdf.numPages; i++) {
+
+status.innerText = "Converting page " + i;
+
+const page = await pdf.getPage(i);
+const viewport = page.getViewport({ scale: 2 });
+
+const canvas = document.createElement("canvas");
+const context = canvas.getContext("2d");
+
+canvas.height = viewport.height;
+canvas.width = viewport.width;
+
+await page.render({
+canvasContext: context,
+viewport: viewport
+}).promise;
+
+const link = document.createElement("a");
+link.href = canvas.toDataURL("image/jpeg", 0.9);
+link.download = "page-" + i + ".jpg";
+link.click();
+}
+
+status.innerText = "Done ✅";
+};
+
+fileReader.readAsArrayBuffer(file);
+}
+
+</script>
+
+</body>
+</html>
