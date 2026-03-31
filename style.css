@@ -97,6 +97,10 @@ section:nth-child(odd) {
 background: transparent;
 }
 
+section:last-of-type {
+    margin-bottom: 80px;
+}
+
 /* TOOLS */
 .tools-section {
 text-align: center;
@@ -182,10 +186,10 @@ color: #cbd5f5;
 
 /* FOOTER */
 footer {
-text-align: center;
-padding: 30px;
-background: #020617;
-border-top: 1px solid rgba(255,255,255,0.05);
+    text-align: center;
+    padding: 30px 20px;
+    background: #020617;
+    margin-top: 60px;
 }
 
 footer a {
@@ -253,4 +257,13 @@ li {
 /* ===== SECTION DIVIDER CLEAN ===== */
 section {
     border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: auto;
 }
