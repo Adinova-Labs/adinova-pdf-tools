@@ -254,16 +254,19 @@ li {
     margin-bottom: 8px;
 }
 
-/* ===== SECTION DIVIDER CLEAN ===== */
-section {
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+/* CONTENT BOX FIX */
+.box {
+    background: #020617;
+    padding: 40px;
+    border-radius: 12px;
+    margin-top: 40px;
+    margin-bottom: 60px; /* 🔥 IMPORTANT */
 }
 
+/* LAST SECTION EXTRA SPACE */
+.content {
+    margin-bottom: 80px;
+}
 footer {
-    margin-top: auto;
+    margin-top: 80px;
 }
