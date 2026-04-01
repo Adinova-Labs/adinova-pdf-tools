@@ -205,3 +205,9 @@ display: inline-block;
 footer a:hover {
 color: #22c55e;
 }
+
+.trust-bar {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #94a3b8;
+}
