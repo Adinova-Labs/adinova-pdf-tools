@@ -191,20 +191,18 @@ section {
 
 /* FOOTER */
 footer {
-text-align: center;
-padding: 25px;
-background: #020617;
+    text-align:center;
+    padding:30px;
+    border-top:1px solid rgba(255,255,255,0.05);
 }
 
 footer a {
-color: #94a3b8;
-margin: 10px;
-display: inline-block;
+    color:#94a3b8;
+    margin:0 10px;
+    text-decoration:none;
 }
 
-footer a:hover {
-color: #22c55e;
-}
+footer a:hover {color:#22c55e;}
 
 .trust-bar {
     margin-top: 20px;
