@@ -249,3 +249,70 @@ display: block;
 .nav.active {
 display: flex;
 }
+
+/* CONTACT */
+.contact-section {
+padding: 80px 20px;
+}
+
+.contact-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+gap: 40px;
+max-width: 1000px;
+margin: auto;
+}
+
+/* LEFT TEXT */
+.contact-text {
+max-width: 400px;
+}
+
+.contact-text h1 {
+font-size: 40px;
+margin-bottom: 10px;
+}
+
+.contact-text p {
+color: #94a3b8;
+line-height: 1.6;
+}
+
+/* FORM BOX */
+.form-box {
+background: #020617;
+padding: 30px;
+border-radius: 12px;
+width: 350px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* INPUT */
+input, select, textarea {
+width: 100%;
+padding: 12px;
+margin-top: 10px;
+margin-bottom: 15px;
+border-radius: 8px;
+border: 1px solid #1e293b;
+background: #0f172a;
+color: white;
+}
+
+textarea {
+height: 100px;
+resize: none;
+}
+
+/* TERMS */
+.terms {
+font-size: 13px;
+color: #94a3b8;
+}
+
+.terms a {
+color: #22c55e;
+text-decoration: none;
+}
