@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 
@@ -8,13 +7,13 @@
 
 <title>Merge PDF Online Free | Combine PDF Files Instantly</title>
 
-<meta name="description" content="Merge PDF files online for free. Combine multiple PDFs into one document instantly. Fast, secure, no signup required. Works on mobile and desktop.">
+<meta name="description" content="Merge PDF files online free. Combine multiple PDF documents into one single file instantly. Fast, secure, no signup required. Works on mobile and desktop.">
 
-<meta name="keywords" content="merge pdf, combine pdf files, join pdf online, pdf merger free, merge pdf online">
+<meta name="keywords" content="merge pdf, combine pdf files, pdf merger online free, join pdf files, merge multiple pdf">
+
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
 
 <style>
-
-/* RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
@@ -34,10 +33,10 @@ border-bottom:1px solid rgba(255,255,255,0.05);
 position:relative;
 }
 
-.logo{
+.logo {
 color:#22c55e;
 font-weight:700;
-text-decoration:none;
+text-decoration:none;  /* 🔥 IMPORTANT */
 }
 
 .nav{
@@ -74,7 +73,7 @@ color:#94a3b8;
 font-size:16px;
 }
 
-/* TOOL BOX */
+/* TOOL */
 .upload-box{
 border:2px dashed #22c55e;
 padding:50px;
@@ -105,7 +104,7 @@ transform:translateY(-3px);
 box-shadow:0 10px 30px rgba(34,197,94,0.6);
 }
 
-/* TRUST */
+/* TRUST BADGES */
 .trust{
 text-align:center;
 margin-top:15px;
@@ -113,7 +112,9 @@ color:#94a3b8;
 font-size:14px;
 }
 
-.trust span{margin:0 10px;}
+.trust span{
+margin:0 10px;
+}
 
 /* AD */
 .ad{
@@ -154,9 +155,11 @@ margin-top:15px;
 padding-left:20px;
 }
 
-li{margin-bottom:10px;}
+li{
+margin-bottom:10px;
+}
 
-/* FAQ */
+/* FAQ BOX */
 .faq-box{
 margin-top:30px;
 padding:20px;
@@ -173,27 +176,19 @@ background:rgba(34,197,94,0.08);
 border-radius:12px;
 }
 
-/* FOOTER */
-footer{
-text-align:center;
-padding:40px 20px;
-background:#020617;
-border-top:1px solid rgba(255,255,255,0.05);
-margin-top:60px;
+footer {
+    text-align:center;
+    padding:30px;
+    border-top:1px solid rgba(255,255,255,0.05);
 }
 
-footer p{
-color:#94a3b8;
-margin-bottom:10px;
+footer a {
+    color:#94a3b8;
+    margin:0 10px;
+    text-decoration:none;
 }
 
-footer a{
-color:#94a3b8;
-margin:0 10px;
-text-decoration:none;
-}
-
-footer a:hover{color:#22c55e;}
+footer a:hover {color:#22c55e;}
 
 /* MOBILE */
 @media(max-width:768px){
@@ -215,8 +210,8 @@ border-radius:12px;
 
 .hero h1{font-size:28px;}
 .upload-box{width:90%;}
-}
 
+}
 </style>
 
 </head>
@@ -224,7 +219,6 @@ border-radius:12px;
 <body>
 
 <!-- HEADER -->
-
 <div class="header">
 <a href="/index.html" class="logo">Adinova PDF</a>
 
@@ -239,21 +233,23 @@ border-radius:12px;
 </div>
 
 <!-- HERO -->
-
 <section class="hero">
-<h1>Merge PDF Files Online</h1>
-<p>Combine multiple PDF files into one document instantly.</p>
+<h1>Merge PDF Files Online Free</h1>
+<p>Combine multiple PDF documents into one file instantly.</p>
 </section>
 
 <!-- TOOL -->
-
 <div class="upload-box">
-<p>📂 Upload multiple PDF files</p>
-<input type="file" id="fileInput" multiple accept="application/pdf">
+<p>📂 Upload PDF Files</p>
+
+<input type="file" id="pdfInput" accept="application/pdf" multiple>
+
 <br>
+
 <button onclick="mergePDF()">Merge & Download</button>
 </div>
 
+<!-- TRUST -->
 <div class="trust">
 <span>✔ No Signup</span>
 <span>✔ 100% Secure</span>
@@ -262,78 +258,125 @@ border-radius:12px;
 </div>
 
 <!-- AD -->
-
 <div class="ad">Advertisement</div>
 
-<!-- CONTENT -->
-
+<!-- SEO CONTENT -->
 <section class="content">
 
-<h2>Merge PDF Online Free (Fast & Secure)</h2>
+<h2>Merge PDF Online Free – Combine Multiple PDF Files Instantly</h2>
+
 <p>
-Easily merge multiple PDF files into one document with our free online tool. Whether you need to combine reports, invoices, or documents, this tool helps you do it instantly.
+Need to merge PDF files quickly without losing quality? Adinova PDF offers a powerful and free PDF merger that lets you combine multiple PDF documents into a single file instantly. Whether you are preparing documents for job applications, government forms, or office work, this tool helps you merge PDFs in seconds with perfect accuracy.
 </p>
 
 <p>
-Unlike other tools, Adinova PDF works directly in your browser. Your files are never uploaded, ensuring complete privacy and security.
+Unlike other online PDF merger tools, this platform works directly in your browser. That means your files are never uploaded to any server, ensuring complete privacy, faster processing, and a secure experience.
 </p>
 
-<h2>Why Use Our PDF Merger?</h2>
+<h2>Why Choose Our PDF Merge Tool?</h2>
+
+<p>
+There are many PDF merge tools online, but most of them are slow, require uploads, or limit file usage. Adinova PDF is built for speed, security, and unlimited usage.
+</p>
 
 <ul>
-<li>✔ Combine unlimited PDF files</li>
-<li>✔ No file upload (100% private)</li>
-<li>✔ Fast processing in seconds</li>
-<li>✔ Works on all devices</li>
-<li>✔ Completely free forever</li>
+<li>✔ Merge multiple PDF files into one instantly</li>
+<li>✔ No upload required – 100% secure and private</li>
+<li>✔ Maintain original formatting and quality</li>
+<li>✔ Unlimited usage with no watermark</li>
+<li>✔ Works on mobile, tablet, and desktop devices</li>
+<li>✔ Fast browser-based PDF merging</li>
 </ul>
 
-<h2>How to Merge PDF Files?</h2>
+<h2>How to Merge PDF Files Online?</h2>
 
-<ul>
-<li>1. Upload multiple PDF files</li>
-<li>2. Click Merge button</li>
-<li>3. Download combined PDF instantly</li>
-</ul>
-
-<h2>Other Useful Tools</h2>
 <p>
-<a href="/tools/compress.html">Compress PDF</a> |
-<a href="/tools/split.html">Split PDF</a> |
-<a href="/tools/jpg-to-pdf.html">JPG to PDF</a>
+Combining PDF files has never been easier. Follow these simple steps:
 </p>
 
+<ul>
+<li>1. Upload your PDF files</li>
+<li>2. Arrange them in desired order (coming soon upgrade)</li>
+<li>3. Click on “Merge PDF” button</li>
+<li>4. Download your merged PDF file instantly</li>
+</ul>
+
+<h2>Merge PDF Files Without Losing Quality</h2>
+
+<p>
+Many users worry that merging PDFs may affect quality or layout. Our tool preserves the original structure, fonts, images, and formatting of each file. The final merged PDF looks exactly like your original documents combined together.
+</p>
+
+<h2>Best Use Cases for PDF Merging</h2>
+
+<p>
+PDF merging is widely used in daily life for both personal and professional purposes.
+</p>
+
+<ul>
+<li>✔ Combine multiple documents into one file for email</li>
+<li>✔ Merge scanned pages into a single PDF</li>
+<li>✔ Submit job applications and resumes in one file</li>
+<li>✔ Organize study materials and notes</li>
+<li>✔ Upload multiple documents to government portals</li>
+</ul>
+
+<h2>Fast, Secure & Private PDF Merger</h2>
+
+<p>
+Your privacy is our priority. This PDF merge tool works completely offline in your browser. No file is uploaded, stored, or shared with any server. This makes it one of the safest ways to merge PDF files online.
+</p>
+
+<!-- 🔥 INTERNAL LINKING BOOST -->
+<h2>Explore More PDF Tools</h2>
+
+<p>
+Adinova PDF offers a complete suite of free PDF tools to help you manage documents easily:
+</p>
+
+<ul>
+<li><a href="/compress-pdf.html">Compress PDF Online</a> – Reduce PDF file size instantly</li>
+<li><a href="/jpg-to-pdf.html">JPG to PDF Converter</a> – Convert images into PDF</li>
+<li><a href="/split-pdf.html">Split PDF Online</a> – Extract pages from PDF</li>
+</ul>
+
+<!-- FAQ -->
 <div class="faq-box">
 
 <h2>Frequently Asked Questions</h2>
 
-<h3>Is this PDF merger free?</h3>
-<p>Yes, completely free with no hidden charges.</p>
+<h3>Is this PDF merger tool completely free?</h3>
+<p>Yes, it is 100% free with no hidden charges or limitations.</p>
 
-<h3>Are my files safe?</h3>
-<p>Your files are processed locally and never uploaded.</p>
+<h3>Can I merge more than two PDF files?</h3>
+<p>Yes, you can merge multiple PDF documents into one file at once.</p>
 
-<h3>Can I merge multiple files?</h3>
-<p>Yes, you can upload and merge multiple PDFs easily.</p>
+<h3>Will merging PDFs reduce quality?</h3>
+<p>No, the original quality, layout, and formatting are preserved.</p>
 
-<h3>Does it work on mobile?</h3>
-<p>Yes, fully responsive and works on all devices.</p>
+<h3>Is it safe to merge PDF online?</h3>
+<p>Yes. Files are processed locally in your browser and are never uploaded.</p>
+
+<h3>Does this tool work on mobile devices?</h3>
+<p>Yes, it works on Android, iPhone, tablets, and desktops.</p>
+
+<h3>Can I arrange PDF pages before merging?</h3>
+<p>Currently not available, but will be added in future updates.</p>
 
 </div>
 
+<!-- CTA -->
 <div class="cta">
-<h2>Start Merging Your PDFs Now</h2>
-<p>Fast, secure and easy. No signup needed.</p>
+<h2>Merge PDF Files Now – Fast, Secure & Free</h2>
+<p>Combine multiple PDFs into one file instantly without losing quality.</p>
 <button onclick="mergePDF()">Merge PDF Now</button>
 </div>
 
 </section>
 
 <!-- FOOTER -->
-
 <footer>
 <p>© 2026 Adinova Labs. All rights reserved.</p>
-
 <div>
 <a href="/privacy.html">Privacy Policy</a>
 <a href="/terms.html">Terms & Conditions</a>
@@ -342,31 +385,46 @@ Unlike other tools, Adinova PDF works directly in your browser. Your files are n
 </div>
 </footer>
 
-<!-- JS -->
-
 <script>
 
-function mergePDF(){
-const files=document.getElementById("fileInput").files;
+async function mergePDF(){
 
-if(!files.length){
-alert("Upload at least 2 PDF files");
+const input=document.getElementById("pdfInput");
+
+if(!input.files.length){
+alert("Upload PDF files first");
 return;
 }
 
-// DEMO (download first file)
-const link=document.createElement("a");
-link.href=URL.createObjectURL(files[0]);
-link.download="merged.pdf";
-link.click();
+const mergedPdf=await PDFLib.PDFDocument.create();
+
+for(let file of input.files){
+
+const bytes=await file.arrayBuffer();
+const pdf=await PDFLib.PDFDocument.load(bytes);
+
+const copiedPages=await mergedPdf.copyPages(pdf,pdf.getPageIndices());
+
+copiedPages.forEach(page=>{
+mergedPdf.addPage(page);
+});
+
 }
 
-function toggleMenu(){
-document.getElementById("navMenu").classList.toggle("active");
+const mergedBytes=await mergedPdf.save();
+
+const blob=new Blob([mergedBytes],{type:"application/pdf"});
+
+const link=document.createElement("a");
+link.href=URL.createObjectURL(blob);
+link.download="merged.pdf";
+link.click();
+
+alert("✅ PDF Merged Successfully");
+
 }
 
 </script>
 
 </body>
 </html>
-
