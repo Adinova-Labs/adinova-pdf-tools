@@ -241,9 +241,9 @@ border-radius:12px;
 
 <!-- TOOL -->
 <div class="upload-box">
-<p>📂 Upload PDF File(s)</p>
+<p>📂 Upload PDF File</p>
 
-<input type="file" id="pdfInput" accept="application/pdf" multiple>
+<input type="file" id="pdfInput" accept="application/pdf">
 
 <br><br>
 
@@ -252,14 +252,7 @@ border-radius:12px;
 
 <br><br>
 
-<label>Compression Mode:</label><br>
-<select id="mode">
-<option value="auto">Auto (Best Fit)</option>
-<option value="manual">Manual Quality</option>
-</select>
-
-<br><br>
-
+<label>Compression Level:</label><br>
 <select id="quality">
 <option value="0.8">High Quality</option>
 <option value="0.6">Balanced</option>
@@ -267,14 +260,6 @@ border-radius:12px;
 </select>
 
 <br>
-
-<!-- 🔥 PROGRESS BAR -->
-<div style="margin-top:15px;">
-<div style="background:#111;border-radius:10px;height:10px;">
-<div id="progressBar" style="width:0%;height:10px;background:#22c55e;border-radius:10px;"></div>
-</div>
-<p id="progressText" style="font-size:12px;margin-top:5px;">Waiting...</p>
-</div>
 
 <button onclick="reducePDF()">Compress & Download</button>
 </div>
@@ -390,8 +375,6 @@ Many websites require documents under a certain size. This tool helps you reduce
 </div>
 </footer>
 
-<script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
 
@@ -399,62 +382,51 @@ Many websites require documents under a certain size. This tool helps you reduce
 
 async function reducePDF(){
 
-const files=document.getElementById("pdfInput").files;
-const targetKB=parseInt(document.getElementById("targetSize").value);
-const mode=document.getElementById("mode").value;
+const file=document.getElementById("pdfInput").files[0];
+let targetKB=parseInt(document.getElementById("targetSize").value);
 let quality=parseFloat(document.getElementById("quality").value);
 
-if(!files.length){
+if(!file){
 alert("Upload PDF first");
 return;
 }
 
-for(let fileIndex=0; fileIndex<files.length; fileIndex++){
-
-updateProgress(0,"Processing file "+(fileIndex+1));
-
-let file=files[fileIndex];
-let arrayBuffer=await file.arrayBuffer();
-
-// 🔥 LOAD PDF
-let pdf=await pdfjsLib.getDocument({data:arrayBuffer}).promise;
+const arrayBuffer=await file.arrayBuffer();
+const pdf=await pdfjsLib.getDocument({data:arrayBuffer}).promise;
 
 let finalBytes;
 
-// 🔥 AUTO TARGET SIZE LOGIC
-if(mode==="auto" && targetKB){
+// 🔥 If target size given → smart adjust
+if(targetKB){
 
-let q=0.9;
+let q=quality;
 
-while(q>0.1){
+for(let i=0;i<5;i++){
 
-finalBytes=await compressWithQuality(pdf,q);
+finalBytes=await compress(pdf,q);
 
 let sizeKB=finalBytes.length/1024;
 
-updateProgress(Math.round((1-q)*100),"Optimizing: "+Math.round(sizeKB)+" KB");
-
 if(sizeKB<=targetKB) break;
 
-q-=0.1;
+// 🔥 reduce quality step by step
+q -= 0.1;
+
+if(q < 0.2) break;
+
 }
 
 }else{
 
-finalBytes=await compressWithQuality(pdf,quality);
+finalBytes=await compress(pdf,quality);
 
 }
 
-// DOWNLOAD EACH FILE
-downloadPDF(finalBytes,"compressed_"+(fileIndex+1)+".pdf");
-
-updateProgress(100,"Done");
+downloadPDF(finalBytes);
 
 }
 
-}
-
-async function compressWithQuality(pdf,quality){
+async function compress(pdf,quality){
 
 const newPdf=await PDFLib.PDFDocument.create();
 
@@ -482,31 +454,26 @@ newPage.drawImage(jpg,{
 x:0,y:0,width:dims.width,height:dims.height
 });
 
-updateProgress(Math.round((i/pdf.numPages)*100),"Processing page "+i);
-
 }
 
 return await newPdf.save({compress:true});
 
 }
 
-function downloadPDF(bytes,name){
+function downloadPDF(bytes){
 
 const blob=new Blob([bytes],{type:"application/pdf"});
 const link=document.createElement("a");
 
 link.href=URL.createObjectURL(blob);
-link.download=name;
+link.download="reduced.pdf";
 link.click();
 
 }
 
-function updateProgress(percent,text){
+</script>
 
-document.getElementById("progressBar").style.width=percent+"%";
-document.getElementById("progressText").innerText=text;
 
-}
 
 </script>
 
