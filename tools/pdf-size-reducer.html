@@ -241,22 +241,42 @@ border-radius:12px;
 
 <!-- TOOL -->
 <div class="upload-box">
-<p>📂 Upload PDF File</p>
+<p>📂 Upload PDF File(s)</p>
 
-<input type="file" id="pdfInput" accept="application/pdf">
+<input type="file" id="pdfInput" accept="application/pdf" multiple>
 
 <br><br>
 
-<label>Select Compression Level:</label><br>
+<label>Target Size (KB):</label><br>
+<input type="number" id="targetSize" placeholder="Example: 200">
+
+<br><br>
+
+<label>Compression Mode:</label><br>
+<select id="mode">
+<option value="auto">Auto (Best Fit)</option>
+<option value="manual">Manual Quality</option>
+</select>
+
+<br><br>
+
 <select id="quality">
-<option value="1">Low Compression (Best Quality)</option>
-<option value="0.7">Balanced</option>
-<option value="0.4">High Compression (Small Size)</option>
+<option value="0.8">High Quality</option>
+<option value="0.6">Balanced</option>
+<option value="0.4">Small Size</option>
 </select>
 
 <br>
 
-<button onclick="reducePDF()">Reduce Size & Download</button>
+<!-- 🔥 PROGRESS BAR -->
+<div style="margin-top:15px;">
+<div style="background:#111;border-radius:10px;height:10px;">
+<div id="progressBar" style="width:0%;height:10px;background:#22c55e;border-radius:10px;"></div>
+</div>
+<p id="progressText" style="font-size:12px;margin-top:5px;">Waiting...</p>
+</div>
+
+<button onclick="reducePDF()">Compress & Download</button>
 </div>
 
 <!-- TRUST -->
@@ -372,32 +392,119 @@ Many websites require documents under a certain size. This tool helps you reduce
 
 <script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+
+<script>
+
 async function reducePDF(){
 
-const file=document.getElementById("pdfInput").files[0];
+const files=document.getElementById("pdfInput").files;
+const targetKB=parseInt(document.getElementById("targetSize").value);
+const mode=document.getElementById("mode").value;
+let quality=parseFloat(document.getElementById("quality").value);
 
-if(!file){
+if(!files.length){
 alert("Upload PDF first");
 return;
 }
 
-const arrayBuffer=await file.arrayBuffer();
+for(let fileIndex=0; fileIndex<files.length; fileIndex++){
 
-const pdfDoc=await PDFLib.PDFDocument.load(arrayBuffer);
+updateProgress(0,"Processing file "+(fileIndex+1));
 
-const compressedBytes=await pdfDoc.save({
-useObjectStreams:true,
-compress:true
+let file=files[fileIndex];
+let arrayBuffer=await file.arrayBuffer();
+
+// 🔥 LOAD PDF
+let pdf=await pdfjsLib.getDocument({data:arrayBuffer}).promise;
+
+let finalBytes;
+
+// 🔥 AUTO TARGET SIZE LOGIC
+if(mode==="auto" && targetKB){
+
+let q=0.9;
+
+while(q>0.1){
+
+finalBytes=await compressWithQuality(pdf,q);
+
+let sizeKB=finalBytes.length/1024;
+
+updateProgress(Math.round((1-q)*100),"Optimizing: "+Math.round(sizeKB)+" KB");
+
+if(sizeKB<=targetKB) break;
+
+q-=0.1;
+}
+
+}else{
+
+finalBytes=await compressWithQuality(pdf,quality);
+
+}
+
+// DOWNLOAD EACH FILE
+downloadPDF(finalBytes,"compressed_"+(fileIndex+1)+".pdf");
+
+updateProgress(100,"Done");
+
+}
+
+}
+
+async function compressWithQuality(pdf,quality){
+
+const newPdf=await PDFLib.PDFDocument.create();
+
+for(let i=1;i<=pdf.numPages;i++){
+
+const page=await pdf.getPage(i);
+const viewport=page.getViewport({scale:quality*2});
+
+const canvas=document.createElement("canvas");
+const ctx=canvas.getContext("2d");
+
+canvas.width=viewport.width;
+canvas.height=viewport.height;
+
+await page.render({canvasContext:ctx,viewport}).promise;
+
+const img=canvas.toDataURL("image/jpeg",quality);
+
+const jpg=await newPdf.embedJpg(img);
+const dims=jpg.scale(1);
+
+const newPage=newPdf.addPage([dims.width,dims.height]);
+
+newPage.drawImage(jpg,{
+x:0,y:0,width:dims.width,height:dims.height
 });
 
-const blob=new Blob([compressedBytes],{type:"application/pdf"});
+updateProgress(Math.round((i/pdf.numPages)*100),"Processing page "+i);
 
+}
+
+return await newPdf.save({compress:true});
+
+}
+
+function downloadPDF(bytes,name){
+
+const blob=new Blob([bytes],{type:"application/pdf"});
 const link=document.createElement("a");
+
 link.href=URL.createObjectURL(blob);
-link.download="reduced.pdf";
+link.download=name;
 link.click();
 
-alert("✅ PDF Size Reduced");
+}
+
+function updateProgress(percent,text){
+
+document.getElementById("progressBar").style.width=percent+"%";
+document.getElementById("progressText").innerText=text;
 
 }
 
