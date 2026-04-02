@@ -251,7 +251,11 @@ border-radius:12px;
 <p>📂 Upload your PDF file</p>
 <input type="file" id="fileInput" accept="application/pdf">
 <br>
-<button onclick="splitPDF()">Split & Download</button>
+<button onclick="splitPDF()">Split PDF</button>
+</div>
+
+<div class="trust">
+✔ No Signup • ✔ 100% Secure • ✔ No Upload • ✔ Instant Processing
 </div>
 
 <div class="trust">
@@ -346,19 +350,40 @@ Adinova PDF works directly in your browser, ensuring your files remain private a
 
 <script>
 
-function splitPDF(){
-const file=document.getElementById("fileInput");
+async function splitPDF() {
 
-if(!file.files.length){
-alert("Upload PDF first");
+const fileInput = document.getElementById("fileInput");
+
+if (!fileInput.files.length) {
+alert("Please upload a PDF");
 return;
 }
 
-// DEMO download
-const link=document.createElement("a");
-link.href=URL.createObjectURL(file.files[0]);
-link.download="split.pdf";
+const file = fileInput.files[0];
+const arrayBuffer = await file.arrayBuffer();
+
+const pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer);
+const totalPages = pdfDoc.getPageCount();
+
+for (let i = 0; i < totalPages; i++) {
+
+const newPdf = await PDFLib.PDFDocument.create();
+const [page] = await newPdf.copyPages(pdfDoc, [i]);
+newPdf.addPage(page);
+
+const pdfBytes = await newPdf.save();
+
+const blob = new Blob([pdfBytes], { type: "application/pdf" });
+const link = document.createElement("a");
+
+link.href = URL.createObjectURL(blob);
+link.download = `page-${i + 1}.pdf`;
 link.click();
+
+}
+
+alert("All pages downloaded!");
+
 }
 
 function toggleMenu(){
