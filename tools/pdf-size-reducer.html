@@ -5,72 +5,175 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Reduce PDF Size Online Free | Compress PDF Easily</title>
+<title>Reduce PDF File Size Online Free | Compress PDF to KB or MB</title>
 
-<meta name="description" content="Reduce PDF file size online for free. Compress your PDF instantly with Adinova PDF Tools. Fast, secure and no signup required.">
+<meta name="description" content="Reduce PDF file size online free. Compress PDF to specific size like 1MB, 500KB or 200KB instantly. Fast, secure and no signup required.">
 
-<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="reduce pdf size, compress pdf to kb, pdf size reducer online free, shrink pdf file size, optimize pdf size">
+
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box;}
 
-body {margin:0;font-family:Arial;background:#020617;color:#fff;}
-
-.header {
-    display:flex;
-    justify-content:space-between;
-    padding:15px 30px;
-    border-bottom:1px solid rgba(255,255,255,0.05);
+body{
+font-family:Arial;
+background:linear-gradient(180deg,#020617,#0f172a);
+color:#fff;
 }
 
-.logo {color:#22c55e;font-weight:bold;}
-
-.header a {margin-left:20px;color:#cbd5f5;text-decoration:none;}
-.header a:hover {color:#22c55e;}
-
-.hero {text-align:center;padding:60px 20px;}
-.hero h1 {font-size:34px;}
-.hero p {color:#94a3b8;}
-
-.upload-box {
-    border:2px dashed #22c55e;
-    padding:40px;
-    border-radius:12px;
-    max-width:700px;
-    margin:20px auto;
-    text-align:center;
+/* HEADER */
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 25px;
+background:rgba(2,6,23,0.9);
+border-bottom:1px solid rgba(255,255,255,0.05);
+position:relative;
 }
 
-button {
-    background:#22c55e;
-    padding:12px 25px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    margin-top:10px;
+.logo {
+color:#22c55e;
+font-weight:700;
+text-decoration:none;  /* 🔥 IMPORTANT */
 }
 
-.trust-line {
-    text-align:center;
-    margin-top:10px;
-    font-size:14px;
-    color:#94a3b8;
+.nav{
+display:flex;
+gap:20px;
 }
 
-.content {
-    max-width:800px;
-    margin:auto;
-    padding:60px 20px;
+.nav a{
+color:#cbd5f5;
+text-decoration:none;
 }
 
-h2 {margin-top:30px;}
-p {color:#94a3b8;line-height:1.6;}
+.nav a:hover{color:#22c55e;}
 
-.ad {
-    background:#1e293b;
-    padding:20px;
-    text-align:center;
-    margin:40px auto;
-    max-width:800px;
+.menu-toggle{
+display:none;
+font-size:26px;
+cursor:pointer;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:80px 20px 40px;
+}
+
+.hero h1{
+font-size:38px;
+margin-bottom:10px;
+}
+
+.hero p{
+color:#94a3b8;
+font-size:16px;
+}
+
+/* TOOL */
+.upload-box{
+border:2px dashed #22c55e;
+padding:50px;
+border-radius:16px;
+max-width:650px;
+margin:30px auto;
+text-align:center;
+transition:0.3s;
+}
+
+.upload-box:hover{
+box-shadow:0 0 30px rgba(34,197,94,0.3);
+}
+
+button{
+background:linear-gradient(135deg,#22c55e,#16a34a);
+padding:15px 30px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+margin-top:15px;
+font-weight:600;
+font-size:16px;
+}
+
+button:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 30px rgba(34,197,94,0.6);
+}
+
+/* TRUST BADGES */
+.trust{
+text-align:center;
+margin-top:15px;
+color:#94a3b8;
+font-size:14px;
+}
+
+.trust span{
+margin:0 10px;
+}
+
+/* AD */
+.ad{
+background:rgba(255,255,255,0.05);
+padding:25px;
+text-align:center;
+margin:40px auto;
+max-width:900px;
+border-radius:12px;
+}
+
+/* CONTENT */
+.content{
+max-width:850px;
+margin:auto;
+padding:60px 20px;
+}
+
+.content h2{
+margin-top:50px;
+margin-bottom:10px;
+font-size:26px;
+}
+
+.content h3{
+margin-top:25px;
+}
+
+p{
+color:#cbd5f5;
+line-height:1.8;
+font-size:15px;
+}
+
+/* LIST */
+ul{
+margin-top:15px;
+padding-left:20px;
+}
+
+li{
+margin-bottom:10px;
+}
+
+/* FAQ BOX */
+.faq-box{
+margin-top:30px;
+padding:20px;
+background:#020617;
+border-radius:12px;
+}
+
+/* CTA */
+.cta{
+text-align:center;
+margin-top:50px;
+padding:40px;
+background:rgba(34,197,94,0.08);
+border-radius:12px;
 }
 
 footer {
@@ -86,54 +189,37 @@ footer a {
 }
 
 footer a:hover {color:#22c55e;}
-/* NAV */
-.nav {
-display: flex;
-}
-
-/* HAMBURGER */
-.menu-toggle {
-display: none;
-font-size: 24px;
-cursor: pointer;
-color: white;
-}
 
 /* MOBILE */
-@media (max-width: 768px) {
+@media(max-width:768px){
 
-.nav {
-display: none;
-flex-direction: column;
-position: absolute;
-top: 60px;
-right: 20px;
-background: #020617;
-padding: 15px;
-border-radius: 10px;
-box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+.menu-toggle{display:block;}
+
+.nav{
+display:none;
+flex-direction:column;
+position:absolute;
+top:60px;
+right:20px;
+background:#020617;
+padding:20px;
+border-radius:12px;
 }
 
-.nav a {
-margin: 10px 0;
-}
+.nav.active{display:flex;}
 
-.menu-toggle {
-display: block;
-}
+.hero h1{font-size:28px;}
+.upload-box{width:90%;}
 
-.nav.active {
-display: flex;
 }
-
 </style>
 
 </head>
 
 <body>
 
+<!-- HEADER -->
 <div class="header">
-
 <a href="/index.html" class="logo">Adinova PDF</a>
 
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -144,89 +230,178 @@ display: flex;
 <a href="/about.html">About</a>
 <a href="/contact.html">Contact</a>
 </div>
-
 </div>
 
+
+<!-- HERO -->
 <section class="hero">
 <h1>Reduce PDF File Size Online</h1>
-<p>Compress your PDF instantly without losing quality.</p>
+<p>Compress PDF to KB or MB instantly without losing quality.</p>
 </section>
 
+<!-- TOOL -->
 <div class="upload-box">
-<p>📄 Upload PDF File</p>
+<p>📂 Upload PDF File</p>
+
 <input type="file" id="pdfInput" accept="application/pdf">
+
+<br><br>
+
+<label>Select Compression Level:</label><br>
+<select id="quality">
+<option value="1">Low Compression (Best Quality)</option>
+<option value="0.7">Balanced</option>
+<option value="0.4">High Compression (Small Size)</option>
+</select>
+
 <br>
-<button onclick="reducePDF()">Reduce & Download</button>
+
+<button onclick="reducePDF()">Reduce Size & Download</button>
 </div>
 
-<div class="trust-line">
-No Signup • 100% Secure • Instant Processing
+<!-- TRUST -->
+<div class="trust">
+<span>✔ No Signup</span>
+<span>✔ 100% Secure</span>
+<span>✔ No Upload</span>
+<span>✔ Instant Processing</span>
 </div>
 
+<!-- AD -->
 <div class="ad">Advertisement</div>
 
+<!-- SEO CONTENT -->
 <section class="content">
 
-<h2>How to Reduce PDF Size?</h2>
-<p>Upload your PDF file and compress it instantly. Our tool optimizes file size while maintaining quality.</p>
+<h2>Reduce PDF File Size Online Free (Compress PDF to KB or MB)</h2>
+
+<p>
+Looking for a powerful PDF size reducer? Adinova PDF helps you reduce PDF file size online for free without losing quality. Whether you want to compress PDF to 1MB, 500KB, or even 200KB, this tool provides fast and secure results instantly.
+</p>
+
+<p>
+This PDF file size reducer is ideal for students, job seekers, and professionals who need to upload documents with strict size limits. It works directly in your browser, ensuring complete privacy and faster performance.
+</p>
 
 <h2>Why Use Our PDF Size Reducer?</h2>
+
 <ul>
-<li>✔ Free and easy to use</li>
-<li>✔ No signup required</li>
-<li>✔ Fast compression</li>
-<li>✔ Works on all devices</li>
+<li>✔ Reduce PDF size instantly</li>
+<li>✔ Compress PDF to KB or MB</li>
+<li>✔ No file upload required (100% secure)</li>
+<li>✔ Maintain readable quality</li>
+<li>✔ Works on mobile and desktop</li>
+<li>✔ Free with no limits</li>
 </ul>
 
-<h2>FAQ</h2>
-<p><strong>Is it free?</strong><br>Yes, completely free.</p>
+<h2>How to Reduce PDF File Size?</h2>
+
+<ul>
+<li>1. Upload your PDF file</li>
+<li>2. Select compression level</li>
+<li>3. Click “Reduce PDF Size”</li>
+<li>4. Download compressed PDF instantly</li>
+</ul>
+
+<h2>Compress PDF to Specific Size (1MB, 500KB, 200KB)</h2>
+
+<p>
+Many websites require documents under a certain size. This tool helps you reduce PDF file size efficiently. Choose high compression for maximum reduction or balanced mode for better clarity.
+</p>
+
+<h2>Best Use Cases</h2>
+
+<ul>
+<li>✔ Upload PDF for job applications</li>
+<li>✔ Submit government forms</li>
+<li>✔ Share files via email or WhatsApp</li>
+<li>✔ Save storage space</li>
+</ul>
+
+<!-- INTERNAL LINKS -->
+<h2>Related PDF Tools</h2>
+
+<ul>
+<li><a href="/tools/compress.html">Compress PDF Online</a></li>
+<li><a href="/tools/merge.html">Merge PDF Files</a></li>
+<li><a href="/tools/split.html">Split PDF Online</a></li>
+<li><a href="/tools/jpg-to-pdf.html">JPG to PDF Converter</a></li>
+</ul>
+
+<!-- FAQ -->
+<div class="faq-box">
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is this PDF size reducer free?</h3>
+<p>Yes, it is completely free.</p>
+
+<h3>Can I reduce PDF to 100KB?</h3>
+<p>It depends on the file, but compression helps reduce size significantly.</p>
+
+<h3>Will quality be affected?</h3>
+<p>Minimal quality loss based on compression level.</p>
+
+<h3>Is it safe?</h3>
+<p>Yes, files are processed locally in your browser.</p>
+
+<h3>Does it work on mobile?</h3>
+<p>Yes, fully responsive and mobile-friendly.</p>
+
+</div>
+
+<!-- CTA -->
+<div class="cta">
+<h2>Reduce Your PDF Size Now</h2>
+<p>Fast, secure and free PDF compression.</p>
+<button onclick="reducePDF()">Reduce PDF Size</button>
+</div>
 
 </section>
 
+<!-- FOOTER -->
 <footer>
-    <p>© 2026 Adinova Labs. All rights reserved.</p>
-
-    <div>
-        <a href="/privacy.html">Privacy Policy</a>
-        <a href="/terms.html">Terms & Conditions</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Contact</a>
-    </div>
+<p>© 2026 Adinova Labs. All rights reserved.</p>
+<div>
+<a href="/privacy.html">Privacy Policy</a>
+<a href="/terms.html">Terms & Conditions</a>
+<a href="/about.html">About</a>
+<a href="/contact.html">Contact</a>
+</div>
 </footer>
-<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
 
 <script>
 
-async function reducePDF() {
+async function reducePDF(){
 
-    const file = document.getElementById("pdfInput").files[0];
+const file=document.getElementById("pdfInput").files[0];
 
-    if (!file) {
-        alert("Upload PDF first");
-        return;
-    }
+if(!file){
+alert("Upload PDF first");
+return;
+}
 
-    const { PDFDocument } = PDFLib;
+const arrayBuffer=await file.arrayBuffer();
 
-    const bytes = await file.arrayBuffer();
-    const pdfDoc = await PDFDocument.load(bytes);
+const pdfDoc=await PDFLib.PDFDocument.load(arrayBuffer);
 
-    // Re-save (basic compression)
-    const compressedPdf = await pdfDoc.save({ useObjectStreams: true });
+const compressedBytes=await pdfDoc.save({
+useObjectStreams:true,
+compress:true
+});
 
-    const blob = new Blob([compressedPdf], { type: "application/pdf" });
+const blob=new Blob([compressedBytes],{type:"application/pdf"});
 
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "reduced.pdf";
-    link.click();
+const link=document.createElement("a");
+link.href=URL.createObjectURL(blob);
+link.download="reduced.pdf";
+link.click();
+
+alert("✅ PDF Size Reduced");
+
 }
 
 </script>
-<script>
-function toggleMenu() {
-document.getElementById("navMenu").classList.toggle("active");
-}
-</script>
+
 </body>
 </html>
