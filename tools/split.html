@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 
@@ -8,13 +7,13 @@
 
 <title>Split PDF Online Free | Extract Pages from PDF Instantly</title>
 
-<meta name="description" content="Split PDF online for free. Extract pages or divide PDF files instantly. Fast, secure, no signup required. Works on mobile and desktop.">
+<meta name="description" content="Split PDF online free. Extract specific pages or ranges from PDF files instantly. Fast, secure, no signup required. Works on mobile and desktop.">
 
-<meta name="keywords" content="split pdf, extract pdf pages, divide pdf, pdf splitter online free, separate pdf pages">
+<meta name="keywords" content="split pdf, extract pdf pages, pdf splitter online free, separate pdf pages, divide pdf file">
+
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
 
 <style>
-
-/* RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
@@ -34,10 +33,10 @@ border-bottom:1px solid rgba(255,255,255,0.05);
 position:relative;
 }
 
-.logo{
+.logo {
 color:#22c55e;
 font-weight:700;
-text-decoration:none;
+text-decoration:none;  /* 🔥 IMPORTANT */
 }
 
 .nav{
@@ -105,7 +104,7 @@ transform:translateY(-3px);
 box-shadow:0 10px 30px rgba(34,197,94,0.6);
 }
 
-/* TRUST */
+/* TRUST BADGES */
 .trust{
 text-align:center;
 margin-top:15px;
@@ -113,7 +112,9 @@ color:#94a3b8;
 font-size:14px;
 }
 
-.trust span{margin:0 10px;}
+.trust span{
+margin:0 10px;
+}
 
 /* AD */
 .ad{
@@ -154,9 +155,11 @@ margin-top:15px;
 padding-left:20px;
 }
 
-li{margin-bottom:10px;}
+li{
+margin-bottom:10px;
+}
 
-/* FAQ */
+/* FAQ BOX */
 .faq-box{
 margin-top:30px;
 padding:20px;
@@ -173,27 +176,19 @@ background:rgba(34,197,94,0.08);
 border-radius:12px;
 }
 
-/* FOOTER */
-footer{
-text-align:center;
-padding:40px 20px;
-background:#020617;
-border-top:1px solid rgba(255,255,255,0.05);
-margin-top:60px;
+footer {
+    text-align:center;
+    padding:30px;
+    border-top:1px solid rgba(255,255,255,0.05);
 }
 
-footer p{
-color:#94a3b8;
-margin-bottom:10px;
+footer a {
+    color:#94a3b8;
+    margin:0 10px;
+    text-decoration:none;
 }
 
-footer a{
-color:#94a3b8;
-margin:0 10px;
-text-decoration:none;
-}
-
-footer a:hover{color:#22c55e;}
+footer a:hover {color:#22c55e;}
 
 /* MOBILE */
 @media(max-width:768px){
@@ -215,6 +210,7 @@ border-radius:12px;
 
 .hero h1{font-size:28px;}
 .upload-box{width:90%;}
+
 }
 
 </style>
@@ -224,7 +220,6 @@ border-radius:12px;
 <body>
 
 <!-- HEADER -->
-
 <div class="header">
 <a href="/index.html" class="logo">Adinova PDF</a>
 
@@ -239,25 +234,28 @@ border-radius:12px;
 </div>
 
 <!-- HERO -->
-
 <section class="hero">
-<h1>Split PDF Files Online</h1>
-<p>Extract pages or divide PDF into multiple files instantly.</p>
+<h1>Split PDF Online Free</h1>
+<p>Extract pages or divide PDF files instantly.</p>
 </section>
 
 <!-- TOOL -->
-
 <div class="upload-box">
-<p>📂 Upload your PDF file</p>
-<input type="file" id="fileInput" accept="application/pdf">
+<p>📂 Upload PDF File</p>
+
+<input type="file" id="pdfInput" accept="application/pdf">
+
+<br><br>
+
+<label>Enter Page Range (e.g. 1-3 or 2,4,6):</label><br>
+<input type="text" id="range" placeholder="Example: 1-5">
+
 <br>
-<button onclick="splitPDF()">Split PDF</button>
+
+<button onclick="splitPDF()">Split & Download</button>
 </div>
 
-<div class="trust">
-✔ No Signup • ✔ 100% Secure • ✔ No Upload • ✔ Instant Processing
-</div>
-
+<!-- TRUST -->
 <div class="trust">
 <span>✔ No Signup</span>
 <span>✔ 100% Secure</span>
@@ -266,78 +264,92 @@ border-radius:12px;
 </div>
 
 <!-- AD -->
-
 <div class="ad">Advertisement</div>
 
-<!-- CONTENT -->
-
+<!-- SEO CONTENT -->
 <section class="content">
 
-<h2>Split PDF Online Free (Extract Pages Easily)</h2>
+<h2>Split PDF Online Free – Extract PDF Pages Instantly</h2>
+
 <p>
-Split your PDF files into multiple parts or extract specific pages quickly with our free tool. Perfect for separating documents, reports, or forms.
+Need to split a PDF file quickly? Adinova PDF provides a fast and secure way to extract pages from PDF files without losing quality. Whether you want to remove unwanted pages or separate sections of a document, this tool makes it simple and efficient.
 </p>
 
 <p>
-Adinova PDF works directly in your browser, ensuring your files remain private and are never uploaded to any server.
+Unlike other PDF splitter tools, this platform works directly in your browser. That means your files are never uploaded, ensuring complete privacy and faster processing.
 </p>
 
-<h2>Why Use Our PDF Splitter?</h2>
+<h2>Why Use This PDF Splitter?</h2>
 
 <ul>
-<li>✔ Extract specific pages instantly</li>
-<li>✔ No file upload (100% private)</li>
+<li>✔ Extract specific pages or page ranges</li>
+<li>✔ No upload required (100% private)</li>
+<li>✔ Maintain original PDF quality</li>
 <li>✔ Works on all devices</li>
-<li>✔ Fast and reliable</li>
-<li>✔ Completely free forever</li>
+<li>✔ Fast and free</li>
 </ul>
 
 <h2>How to Split PDF File?</h2>
 
 <ul>
 <li>1. Upload your PDF file</li>
-<li>2. Click Split button</li>
-<li>3. Download separated files instantly</li>
+<li>2. Enter page range (e.g. 1-5)</li>
+<li>3. Click Split PDF</li>
+<li>4. Download extracted pages</li>
 </ul>
 
-<h2>Other Useful Tools</h2>
-<p>
-<a href="/tools/merge.html">Merge PDF</a> |
-<a href="/tools/compress.html">Compress PDF</a> |
-<a href="/tools/jpg-to-pdf.html">JPG to PDF</a>
-</p>
+<h2>Best Use Cases</h2>
 
+<ul>
+<li>✔ Extract important pages from large documents</li>
+<li>✔ Remove unwanted pages</li>
+<li>✔ Share only required sections</li>
+<li>✔ Organize PDF files</li>
+</ul>
+
+<!-- INTERNAL LINKS -->
+<h2>Related PDF Tools</h2>
+
+<ul>
+<li><a href="/tools/compress.html">Compress PDF Online</a></li>
+<li><a href="/tools/merge.html">Merge PDF Files</a></li>
+<li><a href="/tools/jpg-to-pdf.html">JPG to PDF Converter</a></li>
+</ul>
+
+<!-- FAQ -->
 <div class="faq-box">
 
 <h2>Frequently Asked Questions</h2>
 
 <h3>Is this PDF splitter free?</h3>
-<p>Yes, completely free with no hidden charges.</p>
+<p>Yes, completely free with no limits.</p>
 
 <h3>Can I extract specific pages?</h3>
-<p>Yes, you can split and extract pages easily.</p>
+<p>Yes, you can enter page ranges or specific numbers.</p>
 
-<h3>Are my files safe?</h3>
-<p>Your files are processed locally and never uploaded.</p>
+<h3>Does it affect quality?</h3>
+<p>No, original quality is preserved.</p>
+
+<h3>Is it safe?</h3>
+<p>Yes, files are processed locally.</p>
 
 <h3>Does it work on mobile?</h3>
-<p>Yes, fully responsive and works on all devices.</p>
+<p>Yes, fully compatible.</p>
 
 </div>
 
+<!-- CTA -->
 <div class="cta">
-<h2>Start Splitting Your PDF Now</h2>
-<p>Fast, secure and easy. No signup needed.</p>
+<h2>Split Your PDF Now</h2>
+<p>Extract pages instantly without losing quality.</p>
 <button onclick="splitPDF()">Split PDF Now</button>
 </div>
 
 </section>
 
 <!-- FOOTER -->
-
 <footer>
 <p>© 2026 Adinova Labs. All rights reserved.</p>
-
 <div>
 <a href="/privacy.html">Privacy Policy</a>
 <a href="/terms.html">Terms & Conditions</a>
@@ -346,48 +358,63 @@ Adinova PDF works directly in your browser, ensuring your files remain private a
 </div>
 </footer>
 
-<!-- JS -->
-
 <script>
 
-async function splitPDF() {
+function parseRange(range, total){
+let pages=new Set();
 
-const fileInput = document.getElementById("fileInput");
+range.split(",").forEach(part=>{
+if(part.includes("-")){
+let [start,end]=part.split("-").map(Number);
+for(let i=start;i<=end;i++) pages.add(i-1);
+}else{
+pages.add(Number(part)-1);
+}
+});
 
-if (!fileInput.files.length) {
-alert("Please upload a PDF");
+return [...pages].filter(p=>p>=0 && p<total);
+}
+
+async function splitPDF(){
+
+const fileInput=document.getElementById("pdfInput");
+const range=document.getElementById("range").value;
+
+if(!fileInput.files.length){
+alert("Upload PDF first");
 return;
 }
 
-const file = fileInput.files[0];
-const arrayBuffer = await file.arrayBuffer();
+if(!range){
+alert("Enter page range");
+return;
+}
 
-const pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer);
-const totalPages = pdfDoc.getPageCount();
+const file=fileInput.files[0];
+const bytes=await file.arrayBuffer();
 
-for (let i = 0; i < totalPages; i++) {
+const pdf=await PDFLib.PDFDocument.load(bytes);
+const totalPages=pdf.getPageCount();
 
-const newPdf = await PDFLib.PDFDocument.create();
-const [page] = await newPdf.copyPages(pdfDoc, [i]);
-newPdf.addPage(page);
+const selectedPages=parseRange(range,totalPages);
 
-const pdfBytes = await newPdf.save();
+const newPdf=await PDFLib.PDFDocument.create();
 
-const blob = new Blob([pdfBytes], { type: "application/pdf" });
-const link = document.createElement("a");
+const copiedPages=await newPdf.copyPages(pdf,selectedPages);
 
-link.href = URL.createObjectURL(blob);
-link.download = `page-${i + 1}.pdf`;
+copiedPages.forEach(p=>newPdf.addPage(p));
+
+const pdfBytes=await newPdf.save();
+
+const blob=new Blob([pdfBytes],{type:"application/pdf"});
+
+const link=document.createElement("a");
+link.href=URL.createObjectURL(blob);
+link.download="split.pdf";
 link.click();
 
-}
+alert("✅ PDF Split Done");
 
-alert("All pages downloaded!");
-
-}
-
-function toggleMenu(){
-document.getElementById("navMenu").classList.toggle("active");
 }
 
 </script>
