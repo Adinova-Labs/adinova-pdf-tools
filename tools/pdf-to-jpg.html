@@ -420,6 +420,18 @@ alert("✅ All Pages Converted");
 
 }
 
+<script>
+function toggleMenu(){
+const nav = document.getElementById("navMenu");
+nav.classList.toggle("active");
+}
+
+// 🔥 auto close on click
+document.querySelectorAll("#navMenu a").forEach(link => {
+link.addEventListener("click", () => {
+document.getElementById("navMenu").classList.remove("active");
+});
+});
 </script>
 
 </body>
