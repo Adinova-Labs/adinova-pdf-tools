@@ -21,20 +21,68 @@ h1,h2{margin-top:25px;}
 p{color:#94a3b8;line-height:1.7;}
 footer{text-align:center;padding:30px;background:#020617;border-top:1px solid rgba(255,255,255,0.05);}
 footer a{color:#94a3b8;margin:0 10px;text-decoration:none;}
+/* NAV */
+.nav {
+display: flex;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+display: none;
+font-size: 24px;
+cursor: pointer;
+color: white;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+.nav {
+display: none;
+flex-direction: column;
+position: absolute;
+top: 60px;
+right: 20px;
+background: #020617;
+padding: 15px;
+border-radius: 10px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+transition: all 0.3s ease;
+}
+
+.nav a {
+margin: 10px 0;
+}
+
+.menu-toggle {
+display: block;
+}
+
+.nav.active {
+display: flex;
+}
+
+}
 </style>
 
 </head>
 
 <body>
 
-<header class="header">
+<div class="header">
+
 <a href="/index.html" class="logo">Adinova PDF</a>
-<nav>
-<a href="/">Home</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-</nav>
-</header>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<div class="nav" id="navMenu">
+<a href="/index.html">Home</a>
+<a href="/tools.html">Tools</a>
+<a href="/about.html">About</a>
+<a href="/contact.html">Contact</a>
+</div>
+
+</div>
 
 <section class="content">
 
@@ -74,6 +122,10 @@ footer a{color:#94a3b8;margin:0 10px;text-decoration:none;}
 <a href="terms.html">Terms</a>
 <a href="contact.html">Contact</a>
 </footer>
-
+<script>
+function toggleMenu() {
+document.getElementById("navMenu").classList.toggle("active");
+}
+</script>
 </body>
 </html>
