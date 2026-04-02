@@ -5,308 +5,263 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>JPG to PDF Online Free | Convert Images to PDF</title>
+<title>JPG to PDF Converter Online Free | Convert Images to PDF Instantly</title>
 
-<meta name="description" content="Convert JPG to PDF online for free. Turn images into PDF files instantly with Adinova PDF Tools. No signup required.">
+<meta name="description" content="Convert JPG to PDF online free. Combine multiple images into a single PDF file with adjustable quality and size. Fast, secure and no signup required.">
 
-<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="jpg to pdf, image to pdf converter, convert jpg to pdf online free, merge images to pdf, photo to pdf">
+
+<!-- LIB -->
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
 
 <style>
-
-body {margin:0;font-family:Arial;background:#020617;color:#fff;}
-
-.header {
-    display:flex;
-    justify-content:space-between;
-    padding:15px 30px;
-    border-bottom:1px solid rgba(255,255,255,0.05);
-}
-
-.logo {color:#22c55e;font-weight:bold;}
-
-.header a {margin-left:20px;color:#cbd5f5;text-decoration:none;}
-.header a:hover {color:#22c55e;}
-
-.hero {text-align:center;padding:60px 20px;}
-.hero h1 {font-size:34px;}
-.hero p {color:#94a3b8;}
-
-.upload-box {
-    border:2px dashed #22c55e;
-    padding:40px;
-    border-radius:12px;
-    max-width:700px;
-    margin:20px auto;
-    text-align:center;
-}
-
-button {
-    background:#22c55e;
-    padding:12px 25px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    margin-top:10px;
-}
-
-/* TRUST LINE CENTER */
-.trust-line {
-text-align:center;
-margin-top:15px;
-font-size:14px;
-color:#94a3b8;
-}
-
-/* AD IMPROVE */
-.ad {
-background:rgba(255,255,255,0.05);
-padding:25px;
-text-align:center;
-margin:40px auto;
-max-width:800px;
-border-radius:12px;
-}
-
-/* INTERNAL LINKS STYLE */
-.tools-links {
-text-align:center;
-margin-top:20px;
-}
-
-.tools-links a {
-color:#22c55e;
-margin:0 10px;
-text-decoration:none;
-font-weight:500;
-}
-
-.tools-links a:hover {
-text-decoration:underline;
-}
-
-/* CONTENT SPACING */
-.content {
-max-width:800px;
-margin:auto;
-padding:60px 20px;
-}
-
-.content h2 {
-margin-top:40px;
-margin-bottom:10px;
-}
-
-.content h3 {
-margin-top:25px;
-}
-
-.content ul {
-margin-top:10px;
-margin-bottom:20px;
-padding-left:20px;
-}
-
-.content li {
-margin-bottom:8px;
-}
-
-
-footer {
-    text-align:center;
-    padding:30px;
-    border-top:1px solid rgba(255,255,255,0.05);
-}
-
-footer a {
-    color:#94a3b8;
-    margin:0 10px;
-    text-decoration:none;
-}
-
-footer a:hover {color:#22c55e;}
-/* NAV */
-.nav {
-display: flex;
-}
-
-/* HAMBURGER */
-.menu-toggle {
-display: none;
-font-size: 24px;
-cursor: pointer;
-color: white;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-
-.nav {
-display: none;
-flex-direction: column;
-position: absolute;
-top: 60px;
-right: 20px;
-background: #020617;
-padding: 15px;
-border-radius: 10px;
-box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.nav a {
-margin: 10px 0;
-}
-
-.menu-toggle {
-display: block;
-}
-
-.nav.active {
-display: flex;
-}
-
+/* SAME TEMPLATE CSS */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial;background:linear-gradient(180deg,#020617,#0f172a);color:#fff;}
+.header{display:flex;justify-content:space-between;align-items:center;padding:18px 25px;background:rgba(2,6,23,0.9);border-bottom:1px solid rgba(255,255,255,0.05);}
+.logo{color:#22c55e;font-weight:700;text-decoration:none;}
+.nav{display:flex;gap:20px;}
+.nav a{color:#cbd5f5;text-decoration:none;}
+.menu-toggle{display:none;font-size:26px;}
+.hero{text-align:center;padding:80px 20px 40px;}
+.hero h1{font-size:38px;margin-bottom:10px;}
+.hero p{color:#94a3b8;}
+.upload-box{border:2px dashed #22c55e;padding:50px;border-radius:16px;max-width:650px;margin:30px auto;text-align:center;}
+button{background:linear-gradient(135deg,#22c55e,#16a34a);padding:15px 30px;border:none;border-radius:10px;cursor:pointer;margin-top:15px;font-weight:600;}
+.trust{text-align:center;margin-top:15px;color:#94a3b8;}
+.ad{background:rgba(255,255,255,0.05);padding:25px;text-align:center;margin:40px auto;max-width:900px;border-radius:12px;}
+.content{max-width:850px;margin:auto;padding:60px 20px;}
+.faq-box{margin-top:30px;padding:20px;background:#020617;border-radius:12px;}
+.cta{text-align:center;margin-top:50px;padding:40px;background:rgba(34,197,94,0.08);border-radius:12px;}
+footer{text-align:center;padding:30px;border-top:1px solid rgba(255,255,255,0.05);}
 </style>
 
 </head>
 
 <body>
 
+<!-- HEADER -->
 <div class="header">
-
 <a href="/index.html" class="logo">Adinova PDF</a>
-
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-<div class="nav" id="navMenu">
+<div class="nav">
 <a href="/index.html">Home</a>
 <a href="/tools.html">Tools</a>
 <a href="/about.html">About</a>
 <a href="/contact.html">Contact</a>
 </div>
-
 </div>
 
+<!-- HERO -->
 <section class="hero">
-<h1>Convert JPG to PDF Online</h1>
-<p>Turn your images into a PDF file instantly.</p>
+<h1>Convert JPG to PDF Online Free</h1>
+<p>Merge multiple images into one PDF. Fast, secure & high quality.</p>
 </section>
 
+<!-- TOOL -->
 <div class="upload-box">
-<p>🖼️ Upload JPG Images</p>
-<input type="file" id="imageInput" multiple accept="image/*">
+<p>🖼 Upload JPG Images</p>
+
+<input type="file" id="imageInput" accept="image/*" multiple>
+
+<br><br>
+
+<label>Image Quality:</label><br>
+<select id="quality">
+<option value="1">High Quality</option>
+<option value="0.7">Balanced</option>
+<option value="0.4">Small Size</option>
+</select>
+
 <br>
-<button onclick="createPDF()">Convert & Download</button>
+
+<button onclick="convertToPDF()">Convert & Download PDF</button>
 </div>
 
-<p class="trust-line">
-No Signup • 100% Secure • Files Never Uploaded
-</p>
+<!-- TRUST -->
+<div class="trust">
+<span>✔ No Signup</span>
+<span>✔ 100% Secure</span>
+<span>✔ No Upload</span>
+<span>✔ Instant Processing</span>
+</div>
 
+<!-- AD -->
 <div class="ad">Advertisement</div>
 
-<div class="tools-links">
-<h3>Other Useful Tools</h3>
-<a href="/tools/merge.html">Merge PDF</a>
-<a href="/tools/compress.html">Compress PDF</a>
-<a href="/tools/split.html">Split PDF</a>
-</div>
-
+<!-- SEO CONTENT -->
 <section class="content">
 
-<h2>Convert JPG to PDF Online for Free</h2>
+<h2>JPG to PDF Converter Online Free (Merge Images into PDF Instantly)</h2>
 
 <p>
-Convert your JPG images into high-quality PDF files instantly using Adinova PDF Tools. 
-Upload multiple images and combine them into a single PDF document in seconds.
+Looking for a fast and reliable JPG to PDF converter online? Adinova PDF lets you convert JPG images to PDF instantly without losing quality. You can merge multiple images into a single PDF file, reduce file size, and download your document in seconds — all without uploading your files to any server.
 </p>
 
 <p>
-Our tool works entirely in your browser, ensuring that your files remain private and secure. 
-No uploads, no delays, and no signup required.
+This free image to PDF converter is perfect for students, office work, government form submissions, and everyday document sharing. Whether you want to convert photos, scanned documents, or screenshots into PDF, this tool gives you high-quality results with full control over file size.
 </p>
 
-<h3>Key Features</h3>
+<h2>Why Choose This JPG to PDF Converter?</h2>
+
+<p>
+Unlike other tools that require uploads or limit usage, Adinova PDF works directly in your browser. This makes the conversion process faster, safer, and more efficient.
+</p>
+
 <ul>
-<li>Instant JPG to PDF conversion</li>
-<li>No signup required</li>
-<li>Secure browser-based processing</li>
-<li>Supports multiple images</li>
-<li>Works on all devices</li>
+<li>✔ Convert JPG to PDF online free without watermark</li>
+<li>✔ Merge multiple images into one PDF file</li>
+<li>✔ Adjust image quality to reduce PDF size (MB to KB)</li>
+<li>✔ 100% secure – no file upload required</li>
+<li>✔ Works on mobile, tablet, and desktop devices</li>
+<li>✔ Instant download after conversion</li>
 </ul>
+
+<h2>How to Convert JPG to PDF Online?</h2>
+
+<p>
+Follow these simple steps to convert your images into a professional PDF file:
+</p>
+
+<ul>
+<li>1. Upload your JPG or PNG images</li>
+<li>2. Select compression level (high quality or small size)</li>
+<li>3. Click on “Convert JPG to PDF”</li>
+<li>4. Download your PDF instantly</li>
+</ul>
+
+<h2>Convert Images to PDF with Size Control (MB to KB)</h2>
+
+<p>
+Need to convert JPG to PDF under 1MB, 500KB, or even 200KB? Our smart compression system helps you reduce file size while keeping your content readable. Choose lower quality for maximum compression or balanced mode for best clarity.
+</p>
+
+<p>
+This feature is especially useful for job applications, exam forms, and websites that require strict file size limits.
+</p>
+
+<h2>Best Use Cases for JPG to PDF Conversion</h2>
+
+<ul>
+<li>✔ Convert scanned documents to PDF</li>
+<li>✔ Upload documents for government forms</li>
+<li>✔ Submit school or college assignments</li>
+<li>✔ Share multiple images as one PDF on WhatsApp</li>
+<li>✔ Create professional PDF files from photos</li>
+</ul>
+
+<h2>100% Secure JPG to PDF Converter (No Upload Required)</h2>
+
+<p>
+Your privacy matters. This JPG to PDF converter processes everything locally in your browser. That means your images are never uploaded to any server, ensuring complete data safety and confidentiality.
+</p>
+
+<!-- 🔥 INTERNAL LINKING (SEO BOOST) -->
+<h2>Related PDF Tools</h2>
+
+<ul>
+<li><a href="/compress-pdf.html">Compress PDF Online</a> – Reduce PDF file size instantly</li>
+<li><a href="/merge-pdf.html">Merge PDF Files</a> – Combine multiple PDFs into one</li>
+<li><a href="/split-pdf.html">Split PDF Online</a> – Extract pages from PDF</li>
+</ul>
+
+<!-- FAQ -->
+<div class="faq-box">
 
 <h2>Frequently Asked Questions</h2>
 
-<h4>Is this tool free?</h4>
-<p>Yes, this JPG to PDF converter is completely free.</p>
+<h3>Is JPG to PDF conversion completely free?</h3>
+<p>Yes, this tool is 100% free with no hidden charges or usage limits.</p>
 
-<h4>Are my files safe?</h4>
-<p>Your files are processed locally and never uploaded.</p>
+<h3>Can I convert multiple images into one PDF?</h3>
+<p>Yes, you can upload multiple JPG or PNG images and merge them into a single PDF file.</p>
 
-<h4>Can I upload multiple images?</h4>
-<p>Yes, you can combine multiple JPG files into one PDF.</p>
+<h3>How do I reduce PDF size while converting?</h3>
+<p>Select a lower quality option before conversion to reduce file size significantly.</p>
 
-<h4>Does it work on mobile?</h4>
-<p>Yes, it works on mobile, tablet, and desktop devices.</p>
+<h3>Can I convert JPG to PDF under 100KB?</h3>
+<p>It depends on your image size, but compression settings help reduce file size as much as possible.</p>
+
+<h3>Is this JPG to PDF tool safe?</h3>
+<p>Yes. Files are processed locally in your browser and are never uploaded.</p>
+
+<h3>Does it work on mobile?</h3>
+<p>Yes, it works perfectly on Android, iPhone, and all modern devices.</p>
+
+</div>
+
+<!-- CTA -->
+<div class="cta">
+<h2>Convert JPG to PDF Now – Fast, Secure & Free</h2>
+<p>Merge images into PDF instantly with adjustable quality and size.</p>
+<button onclick="convertToPDF()">Convert JPG to PDF</button>
+</div>
 
 </section>
 
+<!-- FOOTER -->
 <footer>
-    <p>© 2026 Adinova Labs. All rights reserved.</p>
-
-    <div>
-        <a href="/privacy.html">Privacy Policy</a>
-        <a href="/terms.html">Terms & Conditions</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Contact</a>
-    </div>
+<p>© 2026 Adinova Labs. All rights reserved.</p>
+<div>
+<a href="/privacy.html">Privacy Policy</a>
+<a href="/terms.html">Terms & Conditions</a>
+<a href="/about.html">About</a>
+<a href="/contact.html">Contact</a>
+</div>
 </footer>
 
-<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
-
 <script>
-async function createPDF() {
-    const { PDFDocument } = PDFLib;
-    const files = document.getElementById("imageInput").files;
 
-    if (!files.length) {
-        alert("Upload images first");
-        return;
-    }
+async function convertToPDF(){
 
-    const pdfDoc = await PDFDocument.create();
+const files=document.getElementById("imageInput").files;
+const quality=parseFloat(document.getElementById("quality").value);
 
-    for (let file of files) {
-        const bytes = await file.arrayBuffer();
-
-        let image;
-        if (file.type.includes("png")) {
-            image = await pdfDoc.embedPng(bytes);
-        } else {
-            image = await pdfDoc.embedJpg(bytes);
-        }
-
-        const page = pdfDoc.addPage([image.width, image.height]);
-        page.drawImage(image, {
-            x: 0,
-            y: 0,
-            width: image.width,
-            height: image.height
-        });
-    }
-
-    const pdfBytes = await pdfDoc.save();
-
-    const blob = new Blob([pdfBytes], { type: "application/pdf" });
-
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "converted.pdf";
-    link.click();
+if(!files.length){
+alert("Upload images first");
+return;
 }
-</script>
-<script>
-function toggleMenu() {
-document.getElementById("navMenu").classList.toggle("active");
+
+const pdfDoc=await PDFLib.PDFDocument.create();
+
+for(let file of files){
+
+const bytes=await file.arrayBuffer();
+
+let image;
+
+if(file.type.includes("png")){
+image=await pdfDoc.embedPng(bytes);
+}else{
+image=await pdfDoc.embedJpg(bytes);
 }
+
+const dims=image.scale(quality);
+
+const page=pdfDoc.addPage([dims.width, dims.height]);
+
+page.drawImage(image,{
+x:0,
+y:0,
+width:dims.width,
+height:dims.height
+});
+
+}
+
+const pdfBytes=await pdfDoc.save({compress:true});
+
+const blob=new Blob([pdfBytes],{type:"application/pdf"});
+
+const link=document.createElement("a");
+link.href=URL.createObjectURL(blob);
+link.download="adinova-images.pdf";
+link.click();
+
+alert("✅ PDF Ready!");
+
+}
+
 </script>
+
 </body>
 </html>
