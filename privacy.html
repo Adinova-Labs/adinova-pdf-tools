@@ -27,14 +27,20 @@ footer a{color:#94a3b8;margin:0 10px;text-decoration:none;}
 
 <body>
 
-<header class="header">
+<div class="header">
+
 <a href="/index.html" class="logo">Adinova PDF</a>
-<nav>
-<a href="/">Home</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-</nav>
-</header>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<div class="nav" id="navMenu">
+<a href="/index.html">Home</a>
+<a href="/tools.html">Tools</a>
+<a href="/about.html">About</a>
+<a href="/contact.html">Contact</a>
+</div>
+
+</div>
 
 <section class="content">
 
@@ -77,6 +83,10 @@ footer a{color:#94a3b8;margin:0 10px;text-decoration:none;}
 <a href="terms.html">Terms</a>
 <a href="contact.html">Contact</a>
 </footer>
-
+<script>
+function toggleMenu() {
+document.getElementById("navMenu").classList.toggle("active");
+}
+</script>
 </body>
 </html>
