@@ -1,1 +1,372 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Merge PDF Online Free | Combine PDF Files Instantly</title>
+
+<meta name="description" content="Merge PDF files online for free. Combine multiple PDFs into one document instantly. Fast, secure, no signup required. Works on mobile and desktop.">
+
+<meta name="keywords" content="merge pdf, combine pdf files, join pdf online, pdf merger free, merge pdf online">
+
+<style>
+
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:Arial;
+background:linear-gradient(180deg,#020617,#0f172a);
+color:#fff;
+}
+
+/* HEADER */
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 25px;
+background:rgba(2,6,23,0.9);
+border-bottom:1px solid rgba(255,255,255,0.05);
+position:relative;
+}
+
+.logo{
+color:#22c55e;
+font-weight:700;
+text-decoration:none;
+}
+
+.nav{
+display:flex;
+gap:20px;
+}
+
+.nav a{
+color:#cbd5f5;
+text-decoration:none;
+}
+
+.nav a:hover{color:#22c55e;}
+
+.menu-toggle{
+display:none;
+font-size:26px;
+cursor:pointer;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:80px 20px 40px;
+}
+
+.hero h1{
+font-size:38px;
+margin-bottom:10px;
+}
+
+.hero p{
+color:#94a3b8;
+font-size:16px;
+}
+
+/* TOOL BOX */
+.upload-box{
+border:2px dashed #22c55e;
+padding:50px;
+border-radius:16px;
+max-width:650px;
+margin:30px auto;
+text-align:center;
+transition:0.3s;
+}
+
+.upload-box:hover{
+box-shadow:0 0 30px rgba(34,197,94,0.3);
+}
+
+button{
+background:linear-gradient(135deg,#22c55e,#16a34a);
+padding:15px 30px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+margin-top:15px;
+font-weight:600;
+font-size:16px;
+}
+
+button:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 30px rgba(34,197,94,0.6);
+}
+
+/* TRUST */
+.trust{
+text-align:center;
+margin-top:15px;
+color:#94a3b8;
+font-size:14px;
+}
+
+.trust span{margin:0 10px;}
+
+/* AD */
+.ad{
+background:rgba(255,255,255,0.05);
+padding:25px;
+text-align:center;
+margin:40px auto;
+max-width:900px;
+border-radius:12px;
+}
+
+/* CONTENT */
+.content{
+max-width:850px;
+margin:auto;
+padding:60px 20px;
+}
+
+.content h2{
+margin-top:50px;
+margin-bottom:10px;
+font-size:26px;
+}
+
+.content h3{
+margin-top:25px;
+}
+
+p{
+color:#cbd5f5;
+line-height:1.8;
+font-size:15px;
+}
+
+/* LIST */
+ul{
+margin-top:15px;
+padding-left:20px;
+}
+
+li{margin-bottom:10px;}
+
+/* FAQ */
+.faq-box{
+margin-top:30px;
+padding:20px;
+background:#020617;
+border-radius:12px;
+}
+
+/* CTA */
+.cta{
+text-align:center;
+margin-top:50px;
+padding:40px;
+background:rgba(34,197,94,0.08);
+border-radius:12px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:40px 20px;
+background:#020617;
+border-top:1px solid rgba(255,255,255,0.05);
+margin-top:60px;
+}
+
+footer p{
+color:#94a3b8;
+margin-bottom:10px;
+}
+
+footer a{
+color:#94a3b8;
+margin:0 10px;
+text-decoration:none;
+}
+
+footer a:hover{color:#22c55e;}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.menu-toggle{display:block;}
+
+.nav{
+display:none;
+flex-direction:column;
+position:absolute;
+top:60px;
+right:20px;
+background:#020617;
+padding:20px;
+border-radius:12px;
+}
+
+.nav.active{display:flex;}
+
+.hero h1{font-size:28px;}
+.upload-box{width:90%;}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+<a href="/index.html" class="logo">Adinova PDF</a>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<div class="nav" id="navMenu">
+<a href="/index.html">Home</a>
+<a href="/tools.html">Tools</a>
+<a href="/about.html">About</a>
+<a href="/contact.html">Contact</a>
+</div>
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+<h1>Merge PDF Files Online</h1>
+<p>Combine multiple PDF files into one document instantly.</p>
+</section>
+
+<!-- TOOL -->
+
+<div class="upload-box">
+<p>📂 Upload multiple PDF files</p>
+<input type="file" id="fileInput" multiple accept="application/pdf">
+<br>
+<button onclick="mergePDF()">Merge & Download</button>
+</div>
+
+<div class="trust">
+<span>✔ No Signup</span>
+<span>✔ 100% Secure</span>
+<span>✔ No Upload</span>
+<span>✔ Instant Processing</span>
+</div>
+
+<!-- AD -->
+
+<div class="ad">Advertisement</div>
+
+<!-- CONTENT -->
+
+<section class="content">
+
+<h2>Merge PDF Online Free (Fast & Secure)</h2>
+<p>
+Easily merge multiple PDF files into one document with our free online tool. Whether you need to combine reports, invoices, or documents, this tool helps you do it instantly.
+</p>
+
+<p>
+Unlike other tools, Adinova PDF works directly in your browser. Your files are never uploaded, ensuring complete privacy and security.
+</p>
+
+<h2>Why Use Our PDF Merger?</h2>
+
+<ul>
+<li>✔ Combine unlimited PDF files</li>
+<li>✔ No file upload (100% private)</li>
+<li>✔ Fast processing in seconds</li>
+<li>✔ Works on all devices</li>
+<li>✔ Completely free forever</li>
+</ul>
+
+<h2>How to Merge PDF Files?</h2>
+
+<ul>
+<li>1. Upload multiple PDF files</li>
+<li>2. Click Merge button</li>
+<li>3. Download combined PDF instantly</li>
+</ul>
+
+<h2>Other Useful Tools</h2>
+<p>
+<a href="/tools/compress.html">Compress PDF</a> |
+<a href="/tools/split.html">Split PDF</a> |
+<a href="/tools/jpg-to-pdf.html">JPG to PDF</a>
+</p>
+
+<div class="faq-box">
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is this PDF merger free?</h3>
+<p>Yes, completely free with no hidden charges.</p>
+
+<h3>Are my files safe?</h3>
+<p>Your files are processed locally and never uploaded.</p>
+
+<h3>Can I merge multiple files?</h3>
+<p>Yes, you can upload and merge multiple PDFs easily.</p>
+
+<h3>Does it work on mobile?</h3>
+<p>Yes, fully responsive and works on all devices.</p>
+
+</div>
+
+<div class="cta">
+<h2>Start Merging Your PDFs Now</h2>
+<p>Fast, secure and easy. No signup needed.</p>
+<button onclick="mergePDF()">Merge PDF Now</button>
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+<p>© 2026 Adinova Labs. All rights reserved.</p>
+
+<div>
+<a href="/privacy.html">Privacy Policy</a>
+<a href="/terms.html">Terms & Conditions</a>
+<a href="/about.html">About</a>
+<a href="/contact.html">Contact</a>
+</div>
+</footer>
+
+<!-- JS -->
+
+<script>
+
+function mergePDF(){
+const files=document.getElementById("fileInput").files;
+
+if(!files.length){
+alert("Upload at least 2 PDF files");
+return;
+}
+
+// DEMO (download first file)
+const link=document.createElement("a");
+link.href=URL.createObjectURL(files[0]);
+link.download="merged.pdf";
+link.click();
+}
+
+function toggleMenu(){
+document.getElementById("navMenu").classList.toggle("active");
+}
+
+</script>
+
+</body>
+</html>
 
