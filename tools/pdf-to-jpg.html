@@ -5,144 +5,212 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PDF to JPG Converter Online Free | Adinova PDF</title>
+<title>PDF to JPG Converter Online Free | Convert PDF Pages to Images</title>
 
-<meta name="description" content="Convert PDF to JPG online free. Extract images from PDF instantly with secure browser processing. No signup required.">
+<meta name="description" content="Convert PDF to JPG online free. Extract PDF pages as high-quality images instantly. Fast, secure and no signup required. Works on mobile and desktop.">
 
-<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="pdf to jpg, convert pdf to image, pdf to jpeg online free, extract images from pdf, pdf to png">
+
+<!-- LIB -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box;}
 
-body {margin:0;font-family:Arial;background:#020617;color:#fff;}
-
-.header {
-display:flex;
-justify-content:space-between;
-padding:15px 30px;
-border-bottom:1px solid rgba(255,255,255,0.05);
+body{
+font-family:Arial;
+background:linear-gradient(180deg,#020617,#0f172a);
+color:#fff;
 }
 
-.logo {color:#22c55e;font-weight:bold;}
+/* HEADER */
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 25px;
+background:rgba(2,6,23,0.9);
+border-bottom:1px solid rgba(255,255,255,0.05);
+position:relative;
+}
 
-.header a {
-margin-left:20px;
+.logo {
+color:#22c55e;
+font-weight:700;
+text-decoration:none;  /* 🔥 IMPORTANT */
+}
+
+.nav{
+display:flex;
+gap:20px;
+}
+
+.nav a{
 color:#cbd5f5;
 text-decoration:none;
 }
-.header a:hover {color:#22c55e;}
 
-.hero {
-text-align:center;
-padding:60px 20px;
+.nav a:hover{color:#22c55e;}
+
+.menu-toggle{
+display:none;
+font-size:26px;
+cursor:pointer;
 }
 
-.hero h1 {font-size:34px;}
-.hero p {color:#94a3b8;}
+/* HERO */
+.hero{
+text-align:center;
+padding:80px 20px 40px;
+}
 
-.upload-box {
+.hero h1{
+font-size:38px;
+margin-bottom:10px;
+}
+
+.hero p{
+color:#94a3b8;
+font-size:16px;
+}
+
+/* TOOL */
+.upload-box{
 border:2px dashed #22c55e;
-padding:40px;
-border-radius:12px;
-max-width:700px;
-margin:20px auto;
+padding:50px;
+border-radius:16px;
+max-width:650px;
+margin:30px auto;
 text-align:center;
+transition:0.3s;
 }
 
-button {
-background:#22c55e;
-padding:12px 25px;
+.upload-box:hover{
+box-shadow:0 0 30px rgba(34,197,94,0.3);
+}
+
+button{
+background:linear-gradient(135deg,#22c55e,#16a34a);
+padding:15px 30px;
 border:none;
-border-radius:8px;
+border-radius:10px;
 cursor:pointer;
 margin-top:15px;
+font-weight:600;
+font-size:16px;
 }
 
-button:hover {
-background:#16a34a;
+button:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 30px rgba(34,197,94,0.6);
 }
 
-.status {
-margin-top:10px;
-color:#94a3b8;
-font-size:14px;
-}
-
-.trust-line {
+/* TRUST BADGES */
+.trust{
 text-align:center;
-margin-top:10px;
-font-size:14px;
+margin-top:15px;
 color:#94a3b8;
+font-size:14px;
 }
 
-.content {
-max-width:800px;
+.trust span{
+margin:0 10px;
+}
+
+/* AD */
+.ad{
+background:rgba(255,255,255,0.05);
+padding:25px;
+text-align:center;
+margin:40px auto;
+max-width:900px;
+border-radius:12px;
+}
+
+/* CONTENT */
+.content{
+max-width:850px;
 margin:auto;
 padding:60px 20px;
 }
 
-h2 {margin-top:30px;}
-p {color:#94a3b8;line-height:1.6;}
+.content h2{
+margin-top:50px;
+margin-bottom:10px;
+font-size:26px;
+}
 
-.ad {
-background:#1e293b;
+.content h3{
+margin-top:25px;
+}
+
+p{
+color:#cbd5f5;
+line-height:1.8;
+font-size:15px;
+}
+
+/* LIST */
+ul{
+margin-top:15px;
+padding-left:20px;
+}
+
+li{
+margin-bottom:10px;
+}
+
+/* FAQ BOX */
+.faq-box{
+margin-top:30px;
 padding:20px;
+background:#020617;
+border-radius:12px;
+}
+
+/* CTA */
+.cta{
 text-align:center;
-margin:40px auto;
-max-width:800px;
+margin-top:50px;
+padding:40px;
+background:rgba(34,197,94,0.08);
+border-radius:12px;
 }
 
 footer {
-text-align:center;
-padding:30px;
-border-top:1px solid rgba(255,255,255,0.05);
+    text-align:center;
+    padding:30px;
+    border-top:1px solid rgba(255,255,255,0.05);
 }
 
 footer a {
-color:#94a3b8;
-margin:0 10px;
-text-decoration:none;
+    color:#94a3b8;
+    margin:0 10px;
+    text-decoration:none;
 }
 
 footer a:hover {color:#22c55e;}
-/* NAV */
-.nav {
-display: flex;
-}
-
-/* HAMBURGER */
-.menu-toggle {
-display: none;
-font-size: 24px;
-cursor: pointer;
-color: white;
-}
 
 /* MOBILE */
-@media (max-width: 768px) {
+@media(max-width:768px){
 
-.nav {
-display: none;
-flex-direction: column;
-position: absolute;
-top: 60px;
-right: 20px;
-background: #020617;
-padding: 15px;
-border-radius: 10px;
-box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+.menu-toggle{display:block;}
+
+.nav{
+display:none;
+flex-direction:column;
+position:absolute;
+top:60px;
+right:20px;
+background:#020617;
+padding:20px;
+border-radius:12px;
 }
 
-.nav a {
-margin: 10px 0;
-}
+.nav.active{display:flex;}
 
-.menu-toggle {
-display: block;
-}
-
-.nav.active {
-display: flex;
-}
+.hero h1{font-size:28px;}
+.upload-box{width:90%;}
 
 }
 </style>
@@ -151,8 +219,8 @@ display: flex;
 
 <body>
 
+<!-- HEADER -->
 <div class="header">
-
 <a href="/index.html" class="logo">Adinova PDF</a>
 
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -163,116 +231,180 @@ display: flex;
 <a href="/about.html">About</a>
 <a href="/contact.html">Contact</a>
 </div>
-
 </div>
 
+<!-- HERO -->
 <section class="hero">
-<h1>Convert PDF to JPG Online</h1>
-<p>Extract high-quality images from your PDF instantly.</p>
+<h1>Convert PDF to JPG Online Free</h1>
+<p>Extract PDF pages as high-quality images instantly.</p>
 </section>
 
+<!-- TOOL -->
 <div class="upload-box">
-<p>📄 Upload PDF File</p>
+<p>📂 Upload PDF File</p>
+
 <input type="file" id="pdfInput" accept="application/pdf">
+
+<br><br>
+
+<label>Image Quality:</label><br>
+<select id="quality">
+<option value="1">High Quality</option>
+<option value="0.7">Balanced</option>
+<option value="0.4">Small Size</option>
+</select>
+
 <br>
-<button onclick="convertPDF()">Convert & Download</button>
 
-<div class="status" id="status"></div>
+<button onclick="convertPDF()">Convert & Download Images</button>
 </div>
 
-<div class="trust-line">
-No Signup • 100% Secure • Instant Processing
+<!-- TRUST -->
+<div class="trust">
+<span>✔ No Signup</span>
+<span>✔ 100% Secure</span>
+<span>✔ No Upload</span>
+<span>✔ Instant Processing</span>
 </div>
 
+<!-- AD -->
 <div class="ad">Advertisement</div>
 
+<!-- SEO CONTENT -->
 <section class="content">
 
-<h2>How to Convert PDF to JPG?</h2>
-<p>Upload your PDF file, click convert, and download images instantly. Our tool processes files directly in your browser.</p>
+<h2>PDF to JPG Converter Online Free – Extract Images from PDF</h2>
 
-<h2>Why Choose Adinova PDF?</h2>
+<p>
+Need to convert PDF to JPG quickly? Adinova PDF lets you extract PDF pages as high-quality JPG images instantly. This free tool works directly in your browser, ensuring fast processing and complete privacy.
+</p>
+
+<p>
+Whether you want to convert documents, presentations, or scanned files into images, this PDF to JPG converter gives you clean, clear, and optimized output.
+</p>
+
+<h2>Why Use Our PDF to JPG Converter?</h2>
+
 <ul>
-<li>✔ Fast conversion</li>
-<li>✔ No signup required</li>
-<li>✔ Secure processing</li>
-<li>✔ Works on all devices</li>
+<li>✔ Convert PDF pages into JPG images</li>
+<li>✔ High-quality output with size control</li>
+<li>✔ No upload required (secure processing)</li>
+<li>✔ Works on mobile and desktop</li>
+<li>✔ Fast and free forever</li>
 </ul>
 
-<h2>FAQ</h2>
-<p><strong>Is this tool free?</strong><br>Yes, it is completely free.</p>
+<h2>How to Convert PDF to JPG?</h2>
+
+<ul>
+<li>1. Upload your PDF file</li>
+<li>2. Select image quality</li>
+<li>3. Click Convert</li>
+<li>4. Download images instantly</li>
+</ul>
+
+<h2>Best Use Cases</h2>
+
+<ul>
+<li>✔ Convert PDF pages into images</li>
+<li>✔ Share documents as photos</li>
+<li>✔ Extract visual content</li>
+<li>✔ Save PDF pages for social sharing</li>
+</ul>
+
+<!-- INTERNAL LINKS -->
+<h2>Related PDF Tools</h2>
+
+<ul>
+<li><a href="/tools/split.html">Split PDF Online</a></li>
+<li><a href="/tools/merge.html">Merge PDF Files</a></li>
+<li><a href="/tools/jpg-to-pdf.html">JPG to PDF Converter</a></li>
+</ul>
+
+<!-- FAQ -->
+<div class="faq-box">
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is PDF to JPG conversion free?</h3>
+<p>Yes, completely free.</p>
+
+<h3>Can I convert all pages?</h3>
+<p>Yes, all pages will be converted.</p>
+
+<h3>Does it reduce quality?</h3>
+<p>Depends on selected quality level.</p>
+
+<h3>Is it safe?</h3>
+<p>Yes, files stay in your browser.</p>
+
+<h3>Does it work on mobile?</h3>
+<p>Yes, fully responsive.</p>
+
+</div>
+
+<!-- CTA -->
+<div class="cta">
+<h2>Convert PDF to JPG Now</h2>
+<p>Fast, secure and high-quality conversion.</p>
+<button onclick="convertPDF()">Convert Now</button>
+</div>
 
 </section>
 
+<!-- FOOTER -->
 <footer>
-    <p>© 2026 Adinova Labs. All rights reserved.</p>
-
-    <div>
-        <a href="/privacy.html">Privacy Policy</a>
-        <a href="/terms.html">Terms & Conditions</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Contact</a>
-    </div>
+<p>© 2026 Adinova Labs. All rights reserved.</p>
+<div>
+<a href="/privacy.html">Privacy Policy</a>
+<a href="/terms.html">Terms & Conditions</a>
+<a href="/about.html">About</a>
+<a href="/contact.html">Contact</a>
+</div>
 </footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
 <script>
 
-async function convertPDF() {
+async function convertPDF(){
 
-const file = document.getElementById("pdfInput").files[0];
-const status = document.getElementById("status");
+const file=document.getElementById("pdfInput").files[0];
+const quality=parseFloat(document.getElementById("quality").value);
 
-if (!file) {
+if(!file){
 alert("Upload PDF first");
 return;
 }
 
-status.innerText = "Processing...";
+const arrayBuffer=await file.arrayBuffer();
 
-const fileReader = new FileReader();
+const pdf=await pdfjsLib.getDocument({data:arrayBuffer}).promise;
 
-fileReader.onload = async function() {
+for(let i=1;i<=pdf.numPages;i++){
 
-const typedarray = new Uint8Array(this.result);
-const pdf = await pdfjsLib.getDocument(typedarray).promise;
+const page=await pdf.getPage(i);
+const viewport=page.getViewport({scale:quality * 2});
 
-for (let i = 1; i <= pdf.numPages; i++) {
+const canvas=document.createElement("canvas");
+const context=canvas.getContext("2d");
 
-status.innerText = "Converting page " + i;
+canvas.width=viewport.width;
+canvas.height=viewport.height;
 
-const page = await pdf.getPage(i);
-const viewport = page.getViewport({ scale: 2 });
+await page.render({canvasContext:context,viewport:viewport}).promise;
 
-const canvas = document.createElement("canvas");
-const context = canvas.getContext("2d");
+const img=canvas.toDataURL("image/jpeg",quality);
 
-canvas.height = viewport.height;
-canvas.width = viewport.width;
-
-await page.render({
-canvasContext: context,
-viewport: viewport
-}).promise;
-
-const link = document.createElement("a");
-link.href = canvas.toDataURL("image/jpeg", 0.9);
-link.download = "page-" + i + ".jpg";
+const link=document.createElement("a");
+link.href=img;
+link.download=`page-${i}.jpg`;
 link.click();
+
 }
 
-status.innerText = "Done ✅";
-};
+alert("✅ All Pages Converted");
 
-fileReader.readAsArrayBuffer(file);
 }
 
 </script>
-<script>
-function toggleMenu() {
-document.getElementById("navMenu").classList.toggle("active");
-}
-</script>
+
 </body>
 </html>
