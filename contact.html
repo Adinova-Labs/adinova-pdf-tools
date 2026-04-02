@@ -1,135 +1,20 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contact Adinova PDF | Support & Help</title>
-
-<meta name="description" content="Contact Adinova PDF for support, queries, or suggestions related to PDF tools.">
+<title>Contact Us | Adinova PDF Tools</title>
+<meta name="description" content="Contact Adinova PDF Tools for support, feedback, or queries. We are here to help you.">
 
 <link rel="stylesheet" href="style.css">
-
-<style>
-
-/* SAME STYLE (COPY SAME FROM ABOVE) */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #020617;
-    color: #fff;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 30px;
-    background: #020617;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-
-.logo {
-    font-weight: bold;
-    color: #22c55e;
-}
-
-.header a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #cbd5f5;
-}
-
-.header a:hover {
-    color: #22c55e;
-}
-
-.content {
-    max-width: 900px;
-    margin: auto;
-    padding: 60px 20px;
-}
-
-h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-p {
-    color: #94a3b8;
-    line-height: 1.6;
-}
-
-/* CONTACT BOX */
-.contact-box {
-    background: #0f172a;
-    padding: 40px;
-    border-radius: 12px;
-    margin-top: 30px;
-}
-
-footer {
-    text-align: center;
-    padding: 30px;
-    background: #020617;
-    border-top: 1px solid rgba(255,255,255,0.05);
-}
-
-footer a {
-    color: #94a3b8;
-    margin: 0 10px;
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: #22c55e;
-}
-/* NAV */
-.nav {
-display: flex;
-}
-
-/* HAMBURGER */
-.menu-toggle {
-display: none;
-font-size: 24px;
-cursor: pointer;
-color: white;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-
-.nav {
-display: none;
-flex-direction: column;
-position: absolute;
-top: 60px;
-right: 20px;
-background: #020617;
-padding: 15px;
-border-radius: 10px;
-box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-transition: all 0.3s ease;
-}
-
-.nav a {
-margin: 10px 0;
-}
-
-.menu-toggle {
-display: block;
-}
-
-.nav.active {
-display: flex;
-}
-
-</style>
 
 </head>
 
 <body>
+
+<!-- HEADER -->
 
 <div class="header">
 
@@ -146,33 +31,79 @@ display: flex;
 
 </div>
 
-<section class="content">
+<!-- MAIN -->
 
+<section class="contact-section">
+
+<div class="contact-container">
+
+<!-- LEFT -->
+
+<div class="contact-text">
 <h1>Contact Us</h1>
+<p>
+Have questions, feedback, or need support?  
+We're here to help you anytime.
+</p>
+</div>
 
-<p>If you have any questions, suggestions, or feedback, feel free to reach out to us.</p>
+<!-- FORM -->
 
-<div class="contact-box">
+<div class="form-box">
 
-<p><strong>Email:</strong> support@adinovapdf.online</p>
+<form action="https://formspree.io/f/mvzvbglo" method="POST">
 
-<p>We usually respond within 24-48 hours.</p>
+<input type="hidden" name="_redirect" value="https://adinovapdf.online/thank-you.html">
+
+<label>Your Name*</label> <input type="text" name="name" placeholder="Your Name" required>
+
+<label>Your Email*</label> <input type="email" name="email" placeholder="Your Email" required>
+
+<label>Subject*</label> <select name="subject" required>
+
+<option value="">Select subject</option>
+<option>Support</option>
+<option>Feedback</option>
+<option>Bug Report</option>
+</select>
+
+<label>Message*</label>
+
+<textarea name="message" placeholder="Write your message" required></textarea>
+
+<div class="terms">
+<input type="checkbox" required> I accept 
+<a href="/terms.html">Terms</a> & 
+<a href="/privacy.html">Privacy</a>
+</div>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</div>
 
 </div>
 
 </section>
 
+<!-- FOOTER -->
+
 <footer>
+
 <p>© 2026 Adinova Labs</p>
 
-<a href="privacy.html">Privacy Policy</a>
-<a href="terms.html">Terms & Conditions</a>
-<a href="contact.html">Contact</a>
+<a href="/privacy.html">Privacy Policy</a> <a href="/terms.html">Terms</a> <a href="/contact.html">Contact</a>
+
 </footer>
+
+<!-- HAMBURGER JS -->
+
 <script>
 function toggleMenu() {
 document.getElementById("navMenu").classList.toggle("active");
 }
 </script>
+
 </body>
 </html>
