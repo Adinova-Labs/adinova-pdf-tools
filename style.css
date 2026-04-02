@@ -316,3 +316,33 @@ color: #94a3b8;
 color: #22c55e;
 text-decoration: none;
 }
+/* FORM FIX */
+.form-box form {
+display: flex;
+flex-direction: column;
+}
+
+/* GROUP */
+.form-group {
+display: flex;
+flex-direction: column;
+margin-bottom: 15px;
+}
+
+/* LABEL */
+.form-group label {
+margin-bottom: 5px;
+font-size: 14px;
+color: #cbd5f5;
+}
+
+/* INPUT FULL WIDTH FIX */
+input, select, textarea {
+width: 100%;
+}
+
+/* BUTTON FULL WIDTH */
+.form-box button {
+width: 100%;
+margin-top: 15px;
+}
