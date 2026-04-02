@@ -28,12 +28,117 @@ body{font-family:Arial;background:linear-gradient(180deg,#020617,#0f172a);color:
 .hero p{color:#94a3b8;}
 .upload-box{border:2px dashed #22c55e;padding:50px;border-radius:16px;max-width:650px;margin:30px auto;text-align:center;}
 button{background:linear-gradient(135deg,#22c55e,#16a34a);padding:15px 30px;border:none;border-radius:10px;cursor:pointer;margin-top:15px;font-weight:600;}
-.trust{text-align:center;margin-top:15px;color:#94a3b8;}
-.ad{background:rgba(255,255,255,0.05);padding:25px;text-align:center;margin:40px auto;max-width:900px;border-radius:12px;}
-.content{max-width:850px;margin:auto;padding:60px 20px;}
-.faq-box{margin-top:30px;padding:20px;background:#020617;border-radius:12px;}
-.cta{text-align:center;margin-top:50px;padding:40px;background:rgba(34,197,94,0.08);border-radius:12px;}
-footer{text-align:center;padding:30px;border-top:1px solid rgba(255,255,255,0.05);}
+/* TRUST */
+.trust{
+text-align:center;
+margin-top:15px;
+color:#94a3b8;
+font-size:14px;
+}
+
+.trust span{margin:0 10px;}
+
+/* AD */
+.ad{
+background:rgba(255,255,255,0.05);
+padding:25px;
+text-align:center;
+margin:40px auto;
+max-width:900px;
+border-radius:12px;
+}
+
+/* CONTENT */
+.content{
+max-width:850px;
+margin:auto;
+padding:60px 20px;
+}
+
+.content h2{
+margin-top:50px;
+margin-bottom:10px;
+font-size:26px;
+}
+
+.content h3{
+margin-top:25px;
+}
+
+p{
+color:#cbd5f5;
+line-height:1.8;
+font-size:15px;
+}
+
+/* LIST */
+ul{
+margin-top:15px;
+padding-left:20px;
+}
+
+li{margin-bottom:10px;}
+
+/* FAQ */
+.faq-box{
+margin-top:30px;
+padding:20px;
+background:#020617;
+border-radius:12px;
+}
+
+/* CTA */
+.cta{
+text-align:center;
+margin-top:50px;
+padding:40px;
+background:rgba(34,197,94,0.08);
+border-radius:12px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:40px 20px;
+background:#020617;
+border-top:1px solid rgba(255,255,255,0.05);
+margin-top:60px;
+}
+
+footer p{
+color:#94a3b8;
+margin-bottom:10px;
+}
+
+footer a{
+color:#94a3b8;
+margin:0 10px;
+text-decoration:none;
+}
+
+footer a:hover{color:#22c55e;}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.menu-toggle{display:block;}
+
+.nav{
+display:none;
+flex-direction:column;
+position:absolute;
+top:60px;
+right:20px;
+background:#020617;
+padding:20px;
+border-radius:12px;
+}
+
+.nav.active{display:flex;}
+
+.hero h1{font-size:28px;}
+.upload-box{width:90%;}
+}
 </style>
 
 </head>
