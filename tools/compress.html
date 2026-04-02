@@ -177,13 +177,19 @@ background:rgba(34,197,94,0.08);
 border-radius:12px;
 }
 
-/* FOOTER */
-footer{
-text-align:center;
-padding:30px;
-margin-top:40px;
-border-top:1px solid rgba(255,255,255,0.05);
+footer {
+    text-align:center;
+    padding:30px;
+    border-top:1px solid rgba(255,255,255,0.05);
 }
+
+footer a {
+    color:#94a3b8;
+    margin:0 10px;
+    text-decoration:none;
+}
+
+footer a:hover {color:#22c55e;}
 
 /* MOBILE */
 @media(max-width:768px){
@@ -319,10 +325,14 @@ Compress PDF for email attachments, website uploads, WhatsApp sharing, governmen
 </section>
 
 <footer>
-<p>© 2026 Adinova Labs</p>
-<a href="/privacy.html">Privacy</a>
-<a href="/terms.html">Terms</a>
-<a href="/contact.html">Contact</a>
+    <p>© 2026 Adinova Labs. All rights reserved.</p>
+
+    <div>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms & Conditions</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+    </div>
 </footer>
 
 <script>
