@@ -191,26 +191,41 @@ footer a {
 
 footer a:hover {color:#22c55e;}
 
-/* MOBILE */
-@media(max-width:768px){
-
-.menu-toggle{display:block;}
-
-.nav{
-display:none;
-flex-direction:column;
-position:absolute;
-top:60px;
-right:20px;
-background:#020617;
-padding:20px;
-border-radius:12px;
+/* HAMBURGER */
+.menu-toggle {
+display: none;
+font-size: 24px;
+cursor: pointer;
+color: white;
 }
 
-.nav.active{display:flex;}
+/* MOBILE */
+@media (max-width: 768px) {
 
-.hero h1{font-size:28px;}
-.upload-box{width:90%;}
+.nav {
+display: none;
+flex-direction: column;
+position: absolute;
+top: 60px;
+right: 20px;
+background: #020617;
+padding: 15px;
+border-radius: 10px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+transition: all 0.3s ease;
+}
+
+.nav a {
+margin: 10px 0;
+}
+
+.menu-toggle {
+display: block;
+}
+
+.nav.active {
+display: flex;
+}
 
 }
 </style>
@@ -219,8 +234,8 @@ border-radius:12px;
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
+
 <a href="/index.html" class="logo">Adinova PDF</a>
 
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -231,6 +246,7 @@ border-radius:12px;
 <a href="/about.html">About</a>
 <a href="/contact.html">Contact</a>
 </div>
+
 </div>
 
 <!-- HERO -->
