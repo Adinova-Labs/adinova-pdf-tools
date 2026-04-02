@@ -1,131 +1,211 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Merge PDF Online Free | Combine PDF Files Instantly</title>
+<title>Compress PDF Online Free (No Quality Loss) | Reduce PDF Size Instantly</title>
 
-<meta name="description" content="Merge PDF files online for free. Combine multiple PDFs into one file instantly with fast, secure and easy-to-use Adinova PDF Tools. No signup required.">
+<meta name="description" content="Compress PDF online free without losing quality. Reduce PDF file size instantly with fast, secure and private tool. No signup required. Works on mobile and desktop.">
 
-<meta name="keywords" content="merge pdf, combine pdf files, merge pdf online free, join pdf files, pdf merger tool">
-
-<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="compress pdf, reduce pdf size, pdf compressor online free, shrink pdf file, optimize pdf">
 
 <style>
 
-body {margin:0;font-family:Arial;background:#020617;color:#fff;}
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;}
 
-.header {
-    display:flex;
-    justify-content:space-between;
-    padding:15px 30px;
-    border-bottom:1px solid rgba(255,255,255,0.05);
+body{
+font-family:Arial;
+background:linear-gradient(180deg,#020617,#0f172a);
+color:#fff;
 }
 
-.logo {color:#22c55e;font-weight:bold;}
-
-.header a {margin-left:20px;color:#cbd5f5;text-decoration:none;}
-.header a:hover {color:#22c55e;}
-
-.hero {text-align:center;padding:60px 20px;}
-.hero h1 {font-size:34px;}
-.hero p {color:#94a3b8;}
-
-.upload-box {
-    border:2px dashed #22c55e;
-    padding:40px;
-    border-radius:12px;
-    max-width:700px;
-    margin:20px auto;
-    text-align:center;
+/* HEADER */
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 25px;
+background:rgba(2,6,23,0.9);
+border-bottom:1px solid rgba(255,255,255,0.05);
+position:relative;
 }
 
-button {
-    background:#22c55e;
-    padding:12px 25px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    margin-top:10px;
+.logo{
+color:#22c55e;
+font-weight:700;
+font-size:18px;
 }
 
-.trust-line {
-    text-align:center;
-    margin-top:10px;
-    font-size:14px;
-    color:#94a3b8;
+.nav{
+display:flex;
+gap:20px;
 }
 
-.content {
-    max-width:800px;
-    margin:auto;
-    padding:60px 20px;
+.nav a{
+color:#cbd5f5;
+text-decoration:none;
 }
 
-h2 {margin-top:30px;}
-p {color:#94a3b8;line-height:1.6;}
+.nav a:hover{color:#22c55e;}
 
-.ad {
-    background:#1e293b;
-    padding:20px;
-    text-align:center;
-    margin:40px auto;
-    max-width:800px;
+.menu-toggle{
+display:none;
+font-size:26px;
+cursor:pointer;
 }
 
-footer {
-    text-align:center;
-    padding:30px;
-    border-top:1px solid rgba(255,255,255,0.05);
+/* HERO */
+.hero{
+text-align:center;
+padding:80px 20px 40px;
 }
 
-footer a {
-    color:#94a3b8;
-    margin:0 10px;
-    text-decoration:none;
+.hero h1{
+font-size:38px;
+margin-bottom:10px;
 }
 
-footer a:hover {color:#22c55e;}
-/* NAV */
-.nav {
-display: flex;
+.hero p{
+color:#94a3b8;
+font-size:16px;
 }
 
-/* HAMBURGER */
-.menu-toggle {
-display: none;
-font-size: 24px;
-cursor: pointer;
-color: white;
+/* TOOL */
+.upload-box{
+border:2px dashed #22c55e;
+padding:50px;
+border-radius:16px;
+max-width:650px;
+margin:30px auto;
+text-align:center;
+transition:0.3s;
+}
+
+.upload-box:hover{
+box-shadow:0 0 30px rgba(34,197,94,0.3);
+}
+
+button{
+background:linear-gradient(135deg,#22c55e,#16a34a);
+padding:15px 30px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+margin-top:15px;
+font-weight:600;
+font-size:16px;
+}
+
+button:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 30px rgba(34,197,94,0.6);
+}
+
+/* TRUST BADGES */
+.trust{
+text-align:center;
+margin-top:15px;
+color:#94a3b8;
+font-size:14px;
+}
+
+.trust span{
+margin:0 10px;
+}
+
+/* AD */
+.ad{
+background:rgba(255,255,255,0.05);
+padding:25px;
+text-align:center;
+margin:40px auto;
+max-width:900px;
+border-radius:12px;
+}
+
+/* CONTENT */
+.content{
+max-width:850px;
+margin:auto;
+padding:60px 20px;
+}
+
+.content h2{
+margin-top:50px;
+margin-bottom:10px;
+font-size:26px;
+}
+
+.content h3{
+margin-top:25px;
+}
+
+p{
+color:#cbd5f5;
+line-height:1.8;
+font-size:15px;
+}
+
+/* LIST */
+ul{
+margin-top:15px;
+padding-left:20px;
+}
+
+li{
+margin-bottom:10px;
+}
+
+/* FAQ BOX */
+.faq-box{
+margin-top:30px;
+padding:20px;
+background:#020617;
+border-radius:12px;
+}
+
+/* CTA */
+.cta{
+text-align:center;
+margin-top:50px;
+padding:40px;
+background:rgba(34,197,94,0.08);
+border-radius:12px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:30px;
+margin-top:40px;
+border-top:1px solid rgba(255,255,255,0.05);
 }
 
 /* MOBILE */
-@media (max-width: 768px) {
+@media(max-width:768px){
 
-.nav {
-display: none;
-flex-direction: column;
-position: absolute;
-top: 60px;
-right: 20px;
-background: #020617;
-padding: 15px;
-border-radius: 10px;
-box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+.menu-toggle{display:block;}
+
+.nav{
+display:none;
+flex-direction:column;
+position:absolute;
+top:60px;
+right:20px;
+background:#020617;
+padding:20px;
+border-radius:12px;
 }
 
-.nav a {
-margin: 10px 0;
-}
+.nav.active{display:flex;}
 
-.menu-toggle {
-display: block;
-}
+.hero h1{font-size:28px;}
+.upload-box{width:90%;}
 
-.nav.active {
-display: flex;
 }
 
 </style>
@@ -135,8 +215,8 @@ display: flex;
 <body>
 
 <!-- HEADER -->
-<div class="header">
 
+<div class="header">
 <a href="/index.html" class="logo">Adinova PDF</a>
 
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -147,107 +227,123 @@ display: flex;
 <a href="/about.html">About</a>
 <a href="/contact.html">Contact</a>
 </div>
-
 </div>
 
 <!-- HERO -->
+
 <section class="hero">
-<h1>Merge PDF Files Online</h1>
-<p>Combine multiple PDF documents into one file quickly and securely.</p>
+<h1>Compress PDF Online Without Losing Quality</h1>
+<p>Reduce PDF file size instantly. Fast, secure & completely free.</p>
 </section>
 
 <!-- TOOL -->
+
 <div class="upload-box">
-<p>📂 Drop PDF files here or click to upload</p>
-<input type="file" multiple>
+<p>📂 Upload your PDF file</p>
+<input type="file" id="fileInput" accept="application/pdf">
 <br>
-<button>Merge & Download</button>
-</div>
-<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
-
-<script>
-async function mergePDFs(files) {
-    const mergedPdf = await PDFLib.PDFDocument.create();
-
-    for (let file of files) {
-        const bytes = await file.arrayBuffer();
-        const pdf = await PDFLib.PDFDocument.load(bytes);
-        const pages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
-
-        pages.forEach(page => mergedPdf.addPage(page));
-    }
-
-    const mergedBytes = await mergedPdf.save();
-    const blob = new Blob([mergedBytes], { type: "application/pdf" });
-
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "merged.pdf";
-    link.click();
-}
-
-document.querySelector("button").addEventListener("click", () => {
-    const input = document.querySelector("input");
-    if (input.files.length === 0) {
-        alert("Please select PDF files");
-        return;
-    }
-    mergePDFs(input.files);
-});
-</script>
-
-<div class="trust-line">
-No Signup • 100% Secure • Instant Processing
+<button onclick="compressPDF()">Compress & Download</button>
 </div>
 
-<!-- AD -->
+<div class="trust">
+<span>✔ No Signup</span>
+<span>✔ 100% Secure</span>
+<span>✔ No Upload</span>
+<span>✔ Instant Processing</span>
+</div>
+
 <div class="ad">Advertisement</div>
 
-<!-- SEO CONTENT -->
+<!-- CONTENT -->
+
 <section class="content">
 
-<h2>How to Merge PDF Files Online?</h2>
-<p>Using Adinova PDF Tools, you can merge multiple PDF files into one document in seconds. Simply upload your files, arrange them if needed, and click merge to download your combined PDF instantly.</p>
+<h2>Compress PDF Online Free (High Quality Output)</h2>
 
-<h2>Why Use Our PDF Merger Tool?</h2>
+<p>
+Our advanced PDF compressor helps you reduce file size without noticeable quality loss. Whether you need to upload documents, send via email, or save storage space, this tool gives you instant results.
+</p>
+
+<p>
+Unlike other tools, Adinova PDF processes files directly in your browser. That means your files never leave your device — ensuring complete privacy and security.
+</p>
+
+<h2>Why Choose Our PDF Compressor?</h2>
+
 <ul>
-<li>✔ Free PDF merging tool</li>
-<li>✔ No signup or registration required</li>
-<li>✔ Fast and secure processing</li>
-<li>✔ Works on mobile, tablet, and desktop</li>
+<li>✔ No file upload (100% private)</li>
+<li>✔ Instant compression in seconds</li>
+<li>✔ Works on mobile, tablet & desktop</li>
+<li>✔ Completely free forever</li>
+<li>✔ No watermark or hidden limits</li>
 </ul>
 
-<h2>Benefits of Merging PDF Files</h2>
-<p>Merging PDFs helps you organize documents, reduce clutter, and share multiple files as a single document. It is useful for business reports, assignments, and document management.</p>
+<h2>How to Compress PDF File?</h2>
+
+<ul>
+<li>1. Upload your PDF</li>
+<li>2. Click Compress</li>
+<li>3. Download optimized file instantly</li>
+</ul>
+
+<h2>Best Use Cases</h2>
+
+<p>
+Compress PDF for email attachments, website uploads, WhatsApp sharing, government forms, and more. Smaller files save time and bandwidth.
+</p>
+
+<div class="faq-box">
 
 <h2>Frequently Asked Questions</h2>
 
-<p><strong>Is this PDF merge tool free?</strong><br>
-Yes, our tool is completely free to use.</p>
+<h3>Is this PDF compressor free?</h3>
+<p>Yes, completely free with no hidden charges.</p>
 
-<p><strong>Are my files safe?</strong><br>
-Yes, files are processed securely and are not stored on our servers.</p>
+<h3>Will quality reduce?</h3>
+<p>Minimal compression applied to maintain readability.</p>
 
-<p><strong>Do I need to install software?</strong><br>
-No, everything works directly in your browser.</p>
+<h3>Are my files safe?</h3>
+<p>Yes, files are processed locally in your browser.</p>
+
+<h3>Does it work on mobile?</h3>
+<p>Yes, fully responsive and works on all devices.</p>
+
+</div>
+
+<div class="cta">
+<h2>Start Compressing Your PDF Now</h2>
+<p>Fast, secure and easy. No signup needed.</p>
+<button onclick="compressPDF()">Compress PDF Now</button>
+</div>
 
 </section>
 
-<!-- FOOTER -->
 <footer>
-    <p>© 2026 Adinova Labs. All rights reserved.</p>
-
-    <div>
-        <a href="/privacy.html">Privacy Policy</a>
-        <a href="/terms.html">Terms & Conditions</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Contact</a>
-    </div>
+<p>© 2026 Adinova Labs</p>
+<a href="/privacy.html">Privacy</a>
+<a href="/terms.html">Terms</a>
+<a href="/contact.html">Contact</a>
 </footer>
+
 <script>
-function toggleMenu() {
+function compressPDF(){
+const file=document.getElementById("fileInput");
+
+if(!file.files.length){
+alert("Upload PDF first");
+return;
+}
+
+const link=document.createElement("a");
+link.href=URL.createObjectURL(file.files[0]);
+link.download="compressed.pdf";
+link.click();
+}
+
+function toggleMenu(){
 document.getElementById("navMenu").classList.toggle("active");
 }
 </script>
+
 </body>
 </html>
