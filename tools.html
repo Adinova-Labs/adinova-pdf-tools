@@ -101,22 +101,68 @@ text-decoration:none;
 }
 
 footer a:hover {color:#22c55e;}
+/* NAV */
+.nav {
+display: flex;
+}
 
+/* HAMBURGER */
+.menu-toggle {
+display: none;
+font-size: 24px;
+cursor: pointer;
+color: white;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+.nav {
+display: none;
+flex-direction: column;
+position: absolute;
+top: 60px;
+right: 20px;
+background: #020617;
+padding: 15px;
+border-radius: 10px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+transition: all 0.3s ease;
+}
+
+.nav a {
+margin: 10px 0;
+}
+
+.menu-toggle {
+display: block;
+}
+
+.nav.active {
+display: flex;
+}
+
+}
 </style>
 
 </head>
 
 <body>
 
-<header class="header">
+<div class="header">
+
 <a href="/index.html" class="logo">Adinova PDF</a>
-<nav>
-<a href="/">Home</a>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<div class="nav" id="navMenu">
+<a href="/index.html">Home</a>
 <a href="/tools.html">Tools</a>
 <a href="/about.html">About</a>
 <a href="/contact.html">Contact</a>
-</nav>
-</header>
+</div>
+
+</div>
 
 <section class="hero">
 <h1>All PDF Tools in One Place</h1>
@@ -183,6 +229,10 @@ footer a:hover {color:#22c55e;}
         <a href="/contact.html">Contact</a>
     </div>
 </footer>
-
+<script>
+function toggleMenu() {
+document.getElementById("navMenu").classList.toggle("active");
+}
+</script>
 </body>
 </html>
