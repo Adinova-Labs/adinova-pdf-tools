@@ -252,11 +252,10 @@ display: flex;
 
 /* ================= BLOG WHITE THEME ================= */
 
-.blog-page {
+body.blog-page {
 background: #ffffff !important;
 color: #111827 !important;
 }
-
 /* HEADER FIX */
 .blog-page .header {
 background: #ffffff;
