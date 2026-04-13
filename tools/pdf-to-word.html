@@ -270,7 +270,7 @@ color:#fff;
 <p>Convert PDF files to editable Word documents instantly.</p>
 
 <!-- TOOL -->
-<div class="upload-box" id="toolSection">
+<div class="upload-box">
 <p>📂 Upload PDF File</p>
 
 <input type="file" id="pdfFile">
@@ -426,25 +426,6 @@ document.addEventListener("DOMContentLoaded", function(){
 pdfjsLib.GlobalWorkerOptions.workerSrc =
 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
 
-
-// CTA BUTTON FIX
-const ctaBtn = document.getElementById("ctaConvertBtn");
-
-if(ctaBtn){
-ctaBtn.onclick = function(){
-
-const tool = document.getElementById("toolSection");
-
-if(tool){
-tool.scrollIntoView({
-behavior: "smooth",
-block: "center"
-});
-}
-
-};
-}
-
 // MAIN CONVERT
 button.addEventListener("click", async () => {
 
@@ -515,6 +496,30 @@ button.innerText = "Convert to Word";
 });
 
 });
+
+<script>
+
+// CTA button connect
+const ctaBtn = document.getElementById("ctaConvertBtn");
+const mainBtn = document.getElementById("convertBtn");
+
+ctaBtn.addEventListener("click", () => {
+
+    // scroll to tool
+    document.querySelector(".tool-box").scrollIntoView({
+        behavior: "smooth"
+    });
+
+    // optional UX effect
+    mainBtn.classList.add("pulse");
+
+    setTimeout(() => {
+        mainBtn.classList.remove("pulse");
+    }, 1000);
+
+});
+
+</script>
 
 </script>
 <script src="/script.js"></script>
