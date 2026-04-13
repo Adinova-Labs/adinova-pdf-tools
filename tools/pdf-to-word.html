@@ -400,7 +400,7 @@ Your privacy is our priority. This PDF to Word converter processes everything lo
 <div class="cta">
 <h2>Convert PDF to Word Now – Fast, Secure & Free</h2>
 <p>Turn your PDF files into editable Word documents instantly.</p>
-<button onclick="convertToWord()">Convert PDF to Word</button>
+<button>Convert PDF to Word</button>
 </div>
 
 </section>
@@ -420,13 +420,27 @@ Your privacy is our priority. This PDF to Word converter processes everything lo
 
 <script>
 
-// ✅ Worker fix
+document.addEventListener("DOMContentLoaded", function(){
+
+// ✅ FIX WORKER
 pdfjsLib.GlobalWorkerOptions.workerSrc =
 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
 
 const fileInput = document.getElementById("pdfFile");
 const button = document.getElementById("convertBtn");
+const ctaBtn = document.getElementById("ctaConvertBtn");
 
+// CTA SCROLL FIX
+if(ctaBtn){
+ctaBtn.addEventListener("click", () => {
+document.querySelector(".tool-box").scrollIntoView({
+behavior: "smooth",
+block: "center"
+});
+});
+}
+
+// MAIN CONVERT
 button.addEventListener("click", async () => {
 
 const file = fileInput.files[0];
@@ -438,44 +452,39 @@ return;
 
 button.innerText = "Processing...";
 
-try {
+try{
 
 const reader = new FileReader();
 
-reader.onload = async function () {
+reader.onload = async function(){
 
 const typedarray = new Uint8Array(this.result);
 
-// ✅ FIXED LINE
-const loadingTask = pdfjsLib.getDocument({ data: typedarray });
-const pdf = await loadingTask.promise;
+// ✅ FIXED METHOD
+const pdf = await pdfjsLib.getDocument({data: typedarray}).promise;
 
 let fullText = "";
 
-// ⚡ Limit pages (important)
 const maxPages = Math.min(pdf.numPages, 5);
 
-for (let i = 1; i <= maxPages; i++) {
-
+for(let i=1;i<=maxPages;i++){
 const page = await pdf.getPage(i);
 const content = await page.getTextContent();
-
 const strings = content.items.map(item => item.str);
 fullText += strings.join(" ") + "\n\n";
-
 }
 
-// fallback text
-if (!fullText.trim()) {
-fullText = "No readable text found (possibly scanned PDF)";
+// fallback
+if(!fullText.trim()){
+fullText = "No readable text found.";
 }
 
-// DOC create
-const { Document, Packer, Paragraph } = docx;
+// DOCX CREATE
+const { Document, Packer, Paragraph } = window.docx;
 
 const doc = new Document({
-sections: [{
-children: [ new Paragraph(fullText) ]
+sections:[{
+children:[ new Paragraph(fullText) ]
 }]
 });
 
@@ -492,15 +501,16 @@ button.innerText = "Convert to Word";
 
 reader.readAsArrayBuffer(file);
 
-} catch (e) {
-
+}catch(e){
 console.error(e);
-alert("Conversion failed. Try smaller PDF.");
+alert("Error converting PDF");
 button.innerText = "Convert to Word";
-
 }
 
 });
+
+});
+
 </script>
 <script src="/script.js"></script>
 
