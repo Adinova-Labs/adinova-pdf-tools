@@ -407,7 +407,7 @@ Adinova PDF offers a complete suite of free PDF tools to help you manage documen
 <div class="cta">
 <h2>Compress Your PDF Now – Fast, Secure & Free</h2>
 <p>Reduce PDF file size instantly without losing quality. No signup required.</p>
-<button onclick="compressPDF()">Compress PDF Now</button>
+<button id="ctaConvertBtn" class="btn">Convert PDF to Word</button>
 </div>
 
 </section>
@@ -456,6 +456,27 @@ link.click();
 alert("✅ Compression Done");
 
 }
+<script>
+
+// CTA button connect
+const ctaBtn = document.getElementById("ctaConvertBtn");
+const mainBtn = document.getElementById("convertBtn");
+
+ctaBtn.addEventListener("click", () => {
+
+    // scroll to tool
+    document.querySelector(".tool-box").scrollIntoView({
+        behavior: "smooth"
+    });
+
+    // optional UX effect
+    mainBtn.classList.add("pulse");
+
+    setTimeout(() => {
+        mainBtn.classList.remove("pulse");
+    }, 1000);
+
+});
 
 </script>
 
