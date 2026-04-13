@@ -417,7 +417,7 @@ Your privacy matters. This JPG to PDF converter processes everything locally in 
 
 <script>
 
-// ✅ IMPORTANT FIX
+// ✅ Worker fix
 pdfjsLib.GlobalWorkerOptions.workerSrc =
 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
 
@@ -435,30 +435,44 @@ return;
 
 button.innerText = "Processing...";
 
-try{
+try {
 
 const reader = new FileReader();
 
-reader.onload = async function(){
+reader.onload = async function () {
 
 const typedarray = new Uint8Array(this.result);
 
-const pdf = await pdfjsLib.getDocument(typedarray).promise;
+// ✅ FIXED LINE
+const loadingTask = pdfjsLib.getDocument({ data: typedarray });
+const pdf = await loadingTask.promise;
 
 let fullText = "";
 
-for(let i=1;i<=pdf.numPages;i++){
+// ⚡ Limit pages (important)
+const maxPages = Math.min(pdf.numPages, 5);
+
+for (let i = 1; i <= maxPages; i++) {
+
 const page = await pdf.getPage(i);
 const content = await page.getTextContent();
+
 const strings = content.items.map(item => item.str);
 fullText += strings.join(" ") + "\n\n";
+
 }
 
+// fallback text
+if (!fullText.trim()) {
+fullText = "No readable text found (possibly scanned PDF)";
+}
+
+// DOC create
 const { Document, Packer, Paragraph } = docx;
 
 const doc = new Document({
-sections:[{
-children:[ new Paragraph(fullText) ]
+sections: [{
+children: [ new Paragraph(fullText) ]
 }]
 });
 
@@ -475,15 +489,16 @@ button.innerText = "Convert to Word";
 
 reader.readAsArrayBuffer(file);
 
-}catch(e){
+} catch (e) {
+
 console.error(e);
-alert("Error converting file");
+alert("Conversion failed. Try smaller PDF.");
 button.innerText = "Convert to Word";
+
 }
 
 });
 </script>
-
 <script src="/script.js"></script>
 
 </body>
