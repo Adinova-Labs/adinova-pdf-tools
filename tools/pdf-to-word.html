@@ -77,6 +77,9 @@ color:#fff;
 <br><br>
 <button class="btn">Convert to Word</button>
 </div>
+<p style="font-size:13px; opacity:0.7;">
+Note: This tool converts PDF text to Word. Complex layouts, images, and tables may not be preserved perfectly.
+</p>
 
 <p>✔ No Signup &nbsp; ✔ 100% Secure &nbsp; ✔ No Upload &nbsp; ✔ Instant Conversion</p>
 </section>
@@ -202,6 +205,9 @@ Yes, it works on all devices.</p>
 </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.5.0/docx.min.js"></script>
+
 <script>
 const fileInput = document.querySelector('input[type="file"]');
 const button = document.querySelector('.btn');
@@ -228,15 +234,11 @@ button.addEventListener('click', async () => {
             fullText += strings.join(" ") + "\n\n";
         }
 
-        // Create Word file
         const { Document, Packer, Paragraph } = docx;
 
         const doc = new Document({
             sections: [{
-                properties: {},
-                children: [
-                    new Paragraph(fullText)
-                ]
+                children: [ new Paragraph(fullText) ]
             }]
         });
 
