@@ -426,6 +426,20 @@ document.addEventListener("DOMContentLoaded", function(){
 pdfjsLib.GlobalWorkerOptions.workerSrc =
 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
 
+const fileInput = document.getElementById("pdfFile");
+const button = document.getElementById("convertBtn");
+const ctaBtn = document.getElementById("ctaConvertBtn");
+
+// CTA SCROLL FIX
+if(ctaBtn){
+ctaBtn.addEventListener("click", () => {
+document.querySelector(".tool-box").scrollIntoView({
+behavior: "smooth",
+block: "center"
+});
+});
+}
+
 // MAIN CONVERT
 button.addEventListener("click", async () => {
 
@@ -496,30 +510,6 @@ button.innerText = "Convert to Word";
 });
 
 });
-
-<script>
-
-// CTA button connect
-const ctaBtn = document.getElementById("ctaConvertBtn");
-const mainBtn = document.getElementById("convertBtn");
-
-ctaBtn.addEventListener("click", () => {
-
-    // scroll to tool
-    document.querySelector(".tool-box").scrollIntoView({
-        behavior: "smooth"
-    });
-
-    // optional UX effect
-    mainBtn.classList.add("pulse");
-
-    setTimeout(() => {
-        mainBtn.classList.remove("pulse");
-    }, 1000);
-
-});
-
-</script>
 
 </script>
 <script src="/script.js"></script>
